@@ -1,1 +1,7 @@
-index.html.erb
+<h1>Groups</h1>
+<ul>
+  <% @cohorts.each do |cohort| %>
+    <li><%= cohort.title %></li>
+    <%= cohort.description %>
+  <% end %>
+</ul>
