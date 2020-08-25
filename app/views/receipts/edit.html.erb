@@ -1,0 +1,10 @@
+<h1>Update receipt:</h1>
+
+<%= simple_form_for(@receipt) do |f| %>
+  <%= f.input :store %>
+  <%= f.input :date %>
+  <%= f.input :amount %>
+  <%= f.input :description %>
+  <%= f.input :category_name, collection: ['Vacations', 'Transports', 'Food & Beverage shopping', 'Shopping', 'Warranty', 'Restaurants', 'Entertainment', 'Others'], label: 'Choose a category' %>
+  <%= f.submit %>
+<% end %>
