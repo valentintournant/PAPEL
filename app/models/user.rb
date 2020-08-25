@@ -3,4 +3,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :receipts
+  has_many :cohorts, dependent: :destroy
 end
