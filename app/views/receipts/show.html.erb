@@ -1,0 +1,11 @@
+<h1> <%= @receipt.store %> </h1>
+
+<p> <%= @receipt.date %> </p>
+<p> <%= @receipt.description %></p>
+<p> <%= @receipt.amount %></p>
+
+<%= link_to 'Back to receipts', receipts_path %>
+<%= link_to 'Edit receipt', edit_receipt_path(@receipt) %>
+<%= link_to receipt_path(@receipt), method: :delete, data: { confirm: "Are you sure?" } do %>
+  <i class=" link far fa-trash-alt" style="font-size: 25px;"></i>
+<% end  %>
