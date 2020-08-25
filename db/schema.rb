@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_08_25_100436) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
-  
+
   add_foreign_key "cohorts", "users"
   add_foreign_key "receipts", "cohorts"
   add_foreign_key "receipts", "users"
