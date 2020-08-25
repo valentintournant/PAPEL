@@ -1,0 +1,17 @@
+.arguments {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px;
+}
+.icon {
+  img {
+    display: flex;
+    height: 200px;
+    width: 200px;
+  }
+}
+
+.arg-description {
+  text-align: center;
+}
+
