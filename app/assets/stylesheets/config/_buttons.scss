@@ -1,0 +1,27 @@
+.btn-main {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  background: #F26766;
+  transition: background 0.3s ease;
+}
+
+.btn-main:hover {
+  background: #D83E3E;
+  color: white;
+  text-decoration: none;
+}
+
+.btn-outline {
+  color: #F26766;
+  padding: 8px 24px;
+  border-radius: 50px;
+  border: 2px solid #F26766;
+}
+
+.btn-outline:hover {
+  border: 2px solid #D83E3E;
+  color: #D83E3E;
+  text-decoration: none;
+}
+
