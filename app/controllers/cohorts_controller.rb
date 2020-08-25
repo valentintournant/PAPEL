@@ -1,17 +1,48 @@
 class CohortsController < ApplicationController
+  before_action :set_cohort, only: [:show, :update, :destroy, :edit]
   def index
     @cohorts = Cohort.all
   end
 
   def show
-    @cohort = Cohort.find(params[:id])
   end
 
   def new
     @cohort = Cohort.new
   end
 
+  def create
+    @cohort = Cohort.new(offer_params)
+    @cohort.user = current_user
+    if @cohort.save
+      redirect_to cohorts_path(@offer), notice: 'Croup was successfully created.'
+    else
+      render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @cohort.update(cohort_params)
+      redirect_to cohorts_path(@cohort), notice: 'Group was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @cohort.destroy
+    redirect_to cohorts_path, notice: 'Group was successfully destroyed.'
+  end
+
   private
+
+  def set_cohort
+    @cohort = Cohort.find(params[:id])
+  end
+
   def cohort_params
     params.require(:cohort).permit(:title, :description)
   end

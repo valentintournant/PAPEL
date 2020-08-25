@@ -1,0 +1,19 @@
+<div class="form-container-y container form-container-y">
+    <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+  <div class="card-form-y p-4">
+    <h2 class="title"> Create a group </h2>
+    <%= render 'form', cohort: @cohort %>
+    <div class="mt-4">
+      <%= link_to cohorts_path, class: "navbar-brand" do %>
+      <button type="button" class="btn btn-primary">Back to groups</button>
+      <% end %>
+
+      <%= link_to root_path, class: "navbar-brand" do %>
+      <button type="button" class="btn btn-primary">Back to the menu</button>
+      <% end %>
+    </div>
+  </div>
+</div>
+</div>
+</div>

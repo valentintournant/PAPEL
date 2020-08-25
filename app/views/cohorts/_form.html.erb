@@ -1,0 +1,6 @@
+<%= simple_form_for(@cohort) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%#= f.input :category, collection: ['Lights', 'Speakers', 'Food Trucks', 'Drinks', 'Costumes', 'Others'], label: 'Choose your category' %>
+  <%= f.button :submit, 'Edit the group', class: 'btn btn-outline-primary btn-sm ml-2 mt-2' %>
+<% end %>
