@@ -1,11 +1,19 @@
-<h1> <%= @receipt.store %> </h1>
+<div class="container">
+  <div class="card-ticket">
+    <h2> <%= @receipt.store %> </h2>
+    <p id="amount"> <%= @receipt.amount %>€</p>
+    <p> <%= @receipt.date.strftime('%A, %b %d') %> </p>
+    <p> <%= @receipt.description %></p>
 
-<p> <%= @receipt.date %> </p>
-<p> <%= @receipt.description %></p>
-<p> <%= @receipt.amount %></p>
+<div class="card-ticket-icons">
+  <%= link_to edit_receipt_path(@receipt) do %>
+    <i class="fas fa-pen" style="font-size: 15px;"></i>
+    <% end %>
+  <%= link_to receipt_path(@receipt),method: :delete, data: { confirm: "Are you sure?" } do %>
+    <i class=" link far fa-trash-alt" style="font-size: 15px;"></i>
+  <% end  %>
+</div>
 
+  </div>
 <%= link_to 'Back to receipts', receipts_path %>
-<%= link_to 'Edit receipt', edit_receipt_path(@receipt) %>
-<%= link_to receipt_path(@receipt), method: :delete, data: { confirm: "Are you sure?" } do %>
-  <i class=" link far fa-trash-alt" style="font-size: 25px;"></i>
-<% end  %>
+</div>
