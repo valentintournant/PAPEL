@@ -15,9 +15,27 @@ class ReceiptsController < ApplicationController
   def create
     @receipt = Receipt.new(receipt_params)
     @receipt.user = current_user
-    @receipt.save
-    redirect_to receipt_path(@receipt), notice: 'Receipt successfully created.'
+    if @receipt.save
+      redirect_to receipt_path(@receipt), notice: 'Receipt was successfully created.'
+    else
+      render :new
+    end
+  end
 
+  def edit
+  end
+
+  def update
+    if @receipt.update(receipt_params)
+      redirect_to receipt_path(@receipt), notice: 'Receipt was successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @receipt.destroy
+    redirect_to receipts_path, notice: 'Receipt was successfully destroyed.'
   end
 
   private
