@@ -1,0 +1,7 @@
+<h1>My PapeL</h1>
+
+<% @receipts.each do |receipt| %>
+   <p><%=  @receipt.store %> <%=  @receipt.date %> </p>
+<% end %>
+
+<%= link_to 'Add a receipt', new_receipt_path %>
