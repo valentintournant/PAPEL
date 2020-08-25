@@ -1,12 +1,20 @@
-<h1>My PapeL</h1>
+<div class="container">
+  <h1 class="mt-4">My PapeL</h1>
+  <% @receipts.each do |receipt| %>
+    <div class="card-list-ticket mt-5">
+      <i class="fas fa-shopping-bag mb-1" style="font-size: 25px;"></i>
+      <div class="receipt-content">
 
-<% @receipts.each do |receipt| %>
-  <p><%=  receipt.category_name %></p>
-  <p><%=  receipt.store %> </p>
-  <p><%=  receipt.date %></p>
+        <p><%=  receipt.category_name %></p>
+        <h5 class="ml-5"><strong><%=  receipt.store %></strong> </h5>
+        <p class="ml-5"><%=  receipt.date.strftime('%A, %b %d') %></p>
+      </div>
+      <%= link_to 'Show receipt', receipt_path(receipt) %>
+  <% end %>
 
-   <%= link_to 'Show receipt', receipt_path(receipt) %>
-<% end %>
+  </div>
+  <%= link_to 'Add a receipt', new_receipt_path %>
+</div>
 
-<%= link_to 'Add a receipt', new_receipt_path %>
+
 
