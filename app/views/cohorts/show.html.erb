@@ -1,22 +1,23 @@
 <div class="container">
-  <h1>Groups</h1>
-  <% @cohorts.each do |cohort| %>
     <div class="notification">
       <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
        <div class="notification-content">
-        <p><small><%= link_to cohort.title, cohort_path(cohort) %></small></p>
-        <p><strong> <%= cohort.description %></strong></p>
+        <p><small><%= @cohort.title %></small></p>
+        <p><strong> <%= @cohort.description %></strong></p>
       </div>
 
       <div class="notification-actions">
-        <%= link_to edit_cohort_path(cohort), method: :get do %>
+        <%= link_to @edit_cohort_path, method: :get do %>
           <p> Edit <i class="fas fa-pencil-alt"></i></p>
         <% end %>
 
-        <%= link_to cohort_path(cohort), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <%= link_to @cohort_path, method: :delete, data: { confirm: "Are you sure?" } do %>
           <p> Delete <i class="far fa-trash-alt"></i></p>
         <% end %>
       </div>
     </div>
-  <% end %>
+      <div class="container-buttons">
+      <%= link_to 'Back', cohorts_path %>
+    </div>
 </div>
+
