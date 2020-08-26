@@ -37,8 +37,19 @@
   .card-list-content {
     flex-grow: 1;
     padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+        i {
+          color: #F26766;
+          opacity: 0.3;
+          transition-duration: 0.2s
+        }
+        i:hover {
+          color: #F26766;
+          opacity: 1;
+          transition-duration: 0.2s
+        }
   }
-
   .avatar-large {
     width: 56px;
     border-radius: 50%;
@@ -187,6 +198,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 15px;
 
   h2 {
     font-size: 16px;
@@ -200,6 +212,10 @@
     opacity: .7;
     margin-bottom: 0;
     margin-top: 8px;
+  }
+
+  img {
+    margin-left: 5px;
   }
 
   .card-user-infos {
