@@ -1,7 +1,7 @@
 class CohortsController < ApplicationController
   before_action :set_cohort, only: [:show, :update, :destroy, :edit]
   def index
-    @cohorts = Cohort.all
+    @cohorts = current_user.cohorts
   end
 
   def show
@@ -15,7 +15,7 @@ class CohortsController < ApplicationController
     @cohort = Cohort.new(offer_params)
     @cohort.user = current_user
     if @cohort.save
-      redirect_to cohorts_path(@offer), notice: 'Croup was successfully created.'
+      redirect_to cohorts_path(@offer), notice: 'Group was successfully created.'
     else
       render :new
     end
