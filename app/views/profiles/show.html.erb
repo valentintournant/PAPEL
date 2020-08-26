@@ -18,10 +18,17 @@
     <% @user.receipts.each do |receipt| %>
       <%= link_to receipt_path(receipt) do %>
         <div class="card-list-ticket mt-3">
-          <img class="ml-2" src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
           <div class="card-list-content">
-            <p><small><%=  receipt.date.strftime('%A, %b %d') %></small></p>
-            <p><strong><%=  receipt.store  %></strong></p>
+              <div>
+                <p><small><%=  receipt.date.strftime('%A, %b %d') %></small></p>
+                <p><strong><%=  receipt.store  %></strong></p>
+              </div>
+              <div>
+                <%= link_to receipt_path(receipt),method: :delete, data: { confirm: "Are you sure?" } do %>
+                  <i class="link far fa-trash-alt mt-2" style="font-size: 25px;"></i>
+                <% end  %>
+              </div>
+            </div>
           </div>
         </div>
       <% end %>
