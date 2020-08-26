@@ -4,6 +4,5 @@ class User < ApplicationRecord
 
   has_many :receipts
   has_many :cohorts, dependent: :destroy
-  validates :name, presence: true
   has_one_attached :avatar
 end

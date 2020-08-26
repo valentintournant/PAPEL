@@ -4,20 +4,21 @@
  </h1>
 
   <div class="card-user-x mt-5">
+    <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
     <div class="card-user-infos">
       <h2> Number of PapeL : </h2>
-      <h3><%= @receipts.count %></h3>
-      <h2 class="mt-1"> <%= current_user.email %> </h2>
-      <p>Product description with <strong>relevant info</strong> only.</p>
+      <h3><%= @user.receipts.count %></h3>
+      <h2 class="mt-1"> <%= @user.name %> </h2>
+      <p>See your receipts below!</p>
     </div>
   </div>
 
 
   <div class="mt-5">
-    <% @receipts.each do |receipt| %>
+    <% @user.receipts.each do |receipt| %>
       <%= link_to receipt_path(receipt) do %>
         <div class="card-list-ticket mt-3">
-          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+          <img class="ml-2" src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
           <div class="card-list-content">
             <p><small><%=  receipt.date.strftime('%A, %b %d') %></small></p>
             <p><strong><%=  receipt.store  %></strong></p>
@@ -30,6 +31,3 @@
     </div>
   </div>
 </div>
-
-
-
