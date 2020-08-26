@@ -5,6 +5,7 @@ class CohortsController < ApplicationController
   end
 
   def show
+    @member = Member.new
   end
 
   def new
@@ -12,10 +13,10 @@ class CohortsController < ApplicationController
   end
 
   def create
-    @cohort = Cohort.new(offer_params)
-    @cohort.user = current_user
+    @cohort = Cohort.new(cohort_params)
     if @cohort.save
-      redirect_to cohorts_path(@offer), notice: 'Group was successfully created.'
+      Member.create(cohort: @cohort, user: current_user, status: 'owner')
+      redirect_to cohorts_path, notice: 'Group was successfully created.'
     else
       render :new
     end
