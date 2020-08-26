@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "destroy member"
+Member.destroy_all
 puts "destroy user"
 User.destroy_all
 puts "destroy cohort"
@@ -24,16 +26,20 @@ user_4 = User.new(email: 'madeleine@gmail.com', password: 'mdpmdp')
 user_4.save!
 
 puts "create cohort"
-cohort = Cohort.create!(
+cohort_italy = Cohort.create!(
   title: "Holiday in Italy",
   description: "Groups for our holidays and remember our expenses.",
-  user: user_1,
 )
 
-cohort = Cohort.create!(
+cohort_london = Cohort.create!(
   title: "Budget to London",
   description: "Expenses with Julio on London.",
-  user: user_2,
+)
+
+member_cohort = Member.create!(
+  status: 'owner',
+  user_id: user_4.id,
+  cohort_id: cohort_italy.id,
 )
 
 puts "#{Cohort.count}"

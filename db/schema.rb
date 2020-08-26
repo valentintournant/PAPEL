@@ -18,10 +18,18 @@ ActiveRecord::Schema.define(version: 2020_08_26_100145) do
   create_table "cohorts", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_cohorts_on_user_id"
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "cohort_id", null: false
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cohort_id"], name: "index_members_on_cohort_id"
+    t.index ["user_id"], name: "index_members_on_user_id"
   end
 
   create_table "receipts", force: :cascade do |t|
@@ -52,7 +60,8 @@ ActiveRecord::Schema.define(version: 2020_08_26_100145) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "cohorts", "users"
+  add_foreign_key "members", "cohorts"
+  add_foreign_key "members", "users"
   add_foreign_key "receipts", "cohorts"
   add_foreign_key "receipts", "users"
 end
