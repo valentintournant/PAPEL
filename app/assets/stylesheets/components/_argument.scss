@@ -1,17 +1,14 @@
-// .arguments {
+.arguments {
+  justify-content: space-between;
+  align: center;
+  margin: 40px;
+  display: flex;
+}
 
-//   justify-content: space-between;
-//   align: center;
-//   margin: 40px;
-//   display: flex;
-// }
-// .icon {
-//   img {
-
-//     display: flex;
-//     justify-content: space-between;
-//     margin: 40px;
-//   }
-// }
-
-
+.icon {
+  img {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+  }
+}
