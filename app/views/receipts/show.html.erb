@@ -5,16 +5,18 @@
       <p id="card-ticket-date"> <%= @receipt.date.strftime('%A, %b %d') %> </p>
       <p id="card-ticket-desc"> <%= @receipt.description %></p>
     </div>
-      <p id="amount"> <%= @receipt.amount %>€</p>
 
-<div class="card-ticket-icons">
-  <%= link_to edit_receipt_path(@receipt) do %>
-    <i class="fas fa-pen" style="font-size: 15px;"></i>
-    <% end %>
-  <%= link_to receipt_path(@receipt),method: :delete, data: { confirm: "Are you sure?" } do %>
-    <i class=" link far fa-trash-alt" style="font-size: 15px;"></i>
-  <% end  %>
-</div>
+    <p> <%= Receipt::CATEGORIES[@receipt.category_name] %> </p>
+    <p id="amount"> <%= @receipt.amount %>€</p>
+
+    <div class="card-ticket-icons">
+      <%= link_to edit_receipt_path(@receipt) do %>
+        <i class="fas fa-pen" style="font-size: 15px;"></i>
+        <% end %>
+      <%= link_to receipt_path(@receipt),method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class=" link far fa-trash-alt" style="font-size: 15px;"></i>
+      <% end  %>
+    </div>
 
   </div>
 <%= link_to 'Back to receipts', profile_path(current_user) %>

@@ -1,0 +1,11 @@
+hey you
+<%= @user_expense %>
+
+
+<% Receipt::CATEGORIES.each do |key, value| %>
+  <div>
+    <%= value %> |
+    <%= @user.total_receipts_per_category(key) %> |
+    <%= (@user.total_receipts_per_category(key).fdiv(@user_expense) * 100).to_i %> %
+  </div>
+<% end %>
