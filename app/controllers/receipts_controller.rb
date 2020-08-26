@@ -23,7 +23,7 @@ class ReceiptsController < ApplicationController
 
   def update
     if @receipt.update(receipt_params)
-      redirect_to receipt_path(@receipt), notice: 'Receipt was successfully updated.'
+      redirect_to profile_path(current_user), notice: 'Receipt was successfully updated.'
     else
       render :edit
     end
@@ -31,7 +31,7 @@ class ReceiptsController < ApplicationController
 
   def destroy
     @receipt.destroy
-    redirect_to receipts_path, notice: 'Receipt was successfully destroyed.'
+    redirect_to profile_path(current_user), notice: 'Receipt was successfully destroyed.'
   end
 
   private
