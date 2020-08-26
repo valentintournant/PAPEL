@@ -8,6 +8,8 @@ require 'open-uri'
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "destroy member"
 Member.destroy_all
+puts "destroy receipts"
+Receipt.destroy_all
 puts "destroy user"
 User.destroy_all
 puts "destroy cohort"
