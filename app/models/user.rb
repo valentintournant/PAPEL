@@ -20,4 +20,3 @@ class User < ApplicationRecord
     self.receipts.where(category_name: category_name).sum(:amount)
   end
 end
-

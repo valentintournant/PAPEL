@@ -1,13 +1,16 @@
 .card-category {
-
-}
-
-.card-feature {
-
-}
-
-.card-review {
-
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
 }
 
 .card-list-ticket {
@@ -19,21 +22,17 @@
   border: 1px solid rgb(235,235,235);
   box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
   border-radius: 15px;
-
   p {
     margin: 0;
     line-height: 1.4;
   }
-
   a:hover {
     text-decoration: none;
   }
-
   small {
     color: #999999;
     font-weight: bold;
   }
-
   .card-list-content {
     flex-grow: 1;
     padding: 0 24px;
@@ -54,11 +53,7 @@
     width: 56px;
     border-radius: 50%;
   }
-
 }
-
-
-
 
 .card-ticket {
   background-color: white;
@@ -127,7 +122,7 @@
   background-color: white;
   margin: auto;
   margin-top: 20px;
-  width: 300px;
+  width: 340px;
   height: 80px;
   padding: 10px;
   box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
@@ -141,7 +136,8 @@
 
     .card-group-text {
       position: absolute;
-      left: 75px;
+      left: 100px;
+      top: 10px;
     }
     .card-group-icon-edit {
       position: absolute;
@@ -162,8 +158,8 @@
 
     .card-group-icon-delete {
       position: absolute;
-      right: -85px;
-      top: 0px;
+      right: -105px;
+      bottom: 20px;
         i {
           color: #99A7B0;
           opacity: 0.3;
@@ -189,6 +185,14 @@
       bottom: 0px;
       right: 30px;
     }
+    .card-group-avatar {
+      width: 20%;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+
 }
 
 .card-user-x {
