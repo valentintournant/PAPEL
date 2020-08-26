@@ -37,8 +37,19 @@
   .card-list-content {
     flex-grow: 1;
     padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+        i {
+          color: #F26766;
+          opacity: 0.3;
+          transition-duration: 0.2s
+        }
+        i:hover {
+          color: #F26766;
+          opacity: 1;
+          transition-duration: 0.2s
+        }
   }
-
   .avatar-large {
     width: 56px;
     border-radius: 50%;
@@ -56,24 +67,40 @@
   width: 300px;
   height: 165px;
   padding: 10px;
+  border-radius: 15px;
   box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
   position: relative;
-
     #amount {
       position: absolute;
       top: 50px;
       right: 20px;
       font-size: 1.75rem;
     }
-    .card-ticket-icons {
+      .card-ticket-icons {
       position: absolute;
       bottom: 5px;
       right: 15px;
+        i {
+          color: #F26766;
+        }
+        i:hover {
+          text-decoration: none;
+          color: #D83E3E;
+        }
+        a {
+          text-decoration: none;
+        }
+      }
+      #date-color {
+        color: #99A7B0;
+      }
       i {
         color: #F26766;
+        transition-duration: 0.2s
       }
       i:hover {
         color: #D83E3E;
+        transition-duration: 0.2s
       }
       a:hover {
         text-decoration: none;
@@ -93,13 +120,75 @@
     }
 
     #card-ticket-desc {
-      // position: absolute;
       padding-top: 15px;
     }
-}
 
 .card-group {
+  background-color: white;
+  margin: auto;
+  margin-top: 20px;
+  width: 300px;
+  height: 80px;
+  padding: 10px;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
+  position: relative;
+    .card-group-name {
+      color: #99A7B0;
+      font-size: 16px;
+      position: absolute;
+      top: 35px;
+    }
 
+    .card-group-text {
+      position: absolute;
+      left: 75px;
+    }
+    .card-group-icon-edit {
+      position: absolute;
+      left: 130px;
+      top: 0px;
+        i {
+          color: #F26766;
+          transition-duration: 0.2s
+        }
+        i:hover {
+          color: #D83E3E;
+          transition-duration: 0.2s
+        }
+        a:hover {
+          text-decoration: none;
+        }
+    }
+
+    .card-group-icon-delete {
+      position: absolute;
+      right: -85px;
+      top: 0px;
+        i {
+          color: #99A7B0;
+          opacity: 0.3;
+          transition-duration: 0.2s
+        }
+        i:hover {
+          color: #99A7B0;
+          opacity: 1;
+          transition-duration: 0.2s
+        }
+        a:hover {
+          text-decoration: none;
+        }
+    }
+
+    .card-group-title {
+     font-family: 'Raleway', sans-serif;
+    }
+
+    .card-group-status {
+      font-size: 8px;
+      position: absolute;
+      bottom: 0px;
+      right: 30px;
+    }
 }
 
 .card-user-x {
@@ -109,6 +198,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 15px;
 
   h2 {
     font-size: 16px;
@@ -122,6 +212,10 @@
     opacity: .7;
     margin-bottom: 0;
     margin-top: 8px;
+  }
+
+  img {
+    margin-left: 5px;
   }
 
   .card-user-infos {
