@@ -11,8 +11,43 @@
 }
 
 .card-list-ticket {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: white;
+  padding: 8px 16px;
+  border: 1px solid rgb(235,235,235);
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
+  border-radius: 15px;
+
+  p {
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  small {
+    color: #999999;
+    font-weight: bold;
+  }
+
+  .card-list-content {
+    flex-grow: 1;
+    padding: 0 24px;
+  }
+
+  .avatar-large {
+    width: 56px;
+    border-radius: 50%;
+  }
 
 }
+
+
+
 
 .card-ticket {
   background-color: white;
@@ -130,4 +165,31 @@
       bottom: 0px;
       right: 30px;
     }
+}
+
+.card-user-x {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+
+  .card-user-infos {
+    padding: 16px;
+  }
 }
