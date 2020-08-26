@@ -22,21 +22,17 @@
   border: 1px solid rgb(235,235,235);
   box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
   border-radius: 15px;
-
   p {
     margin: 0;
     line-height: 1.4;
   }
-
   a:hover {
     text-decoration: none;
   }
-
   small {
     color: #999999;
     font-weight: bold;
   }
-
   .card-list-content {
     flex-grow: 1;
     padding: 0 24px;
@@ -57,7 +53,6 @@
     width: 56px;
     border-radius: 50%;
   }
-
 }
 
 .card-ticket {
@@ -189,6 +184,10 @@
       bottom: 0px;
       right: 30px;
     }
+    .card-group-picture {
+      width: 15px;
+    }
+
 }
 
 .card-user-x {
