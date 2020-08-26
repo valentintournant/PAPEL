@@ -2,15 +2,15 @@
   <div class="card-ticket">
     <h2> <%= @receipt.store %> </h2>
     <p id="amount"> <%= @receipt.amount %>€</p>
-    <p> <%= @receipt.date.strftime('%A, %b %d') %> </p>
+    <p id="date-color"> <%= @receipt.date.strftime('%A, %b %d') %> </p>
     <p> <%= @receipt.description %></p>
 
 <div class="card-ticket-icons">
   <%= link_to edit_receipt_path(@receipt) do %>
-    <i class="fas fa-pen" style="font-size: 15px;"></i>
+    <i class="fas fa-pen" style="font-size: 16px;"></i>
     <% end %>
   <%= link_to receipt_path(@receipt),method: :delete, data: { confirm: "Are you sure?" } do %>
-    <i class=" link far fa-trash-alt" style="font-size: 15px;"></i>
+    <i class=" link far fa-trash-alt" style="font-size: 16px;"></i>
   <% end  %>
 </div>
 
