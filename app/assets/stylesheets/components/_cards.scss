@@ -71,9 +71,11 @@
       right: 15px;
       i {
         color: #F26766;
+        transition-duration: 0.2s
       }
       i:hover {
         color: #D83E3E;
+        transition-duration: 0.2s
       }
       a:hover {
         text-decoration: none;
@@ -93,13 +95,76 @@
     }
 
     #card-ticket-desc {
-      // position: absolute;
       padding-top: 15px;
     }
 }
 
 .card-group {
+  background-color: white;
+  margin: auto;
+  margin-top: 20px;
+  width: 300px;
+  height: 80px;
+  padding: 10px;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
+  position: relative;
+    .card-group-name {
+      color: #99A7B0;
+      font-size: 16px;
+      position: absolute;
+      top: 35px;
+    }
 
+    .card-group-text {
+      position: absolute;
+      left: 75px;
+    }
+    .card-group-icon-edit {
+      position: absolute;
+      left: 130px;
+      top: 0px;
+        i {
+          color: #F26766;
+          transition-duration: 0.2s
+        }
+        i:hover {
+          color: #D83E3E;
+          transition-duration: 0.2s
+        }
+        a:hover {
+          text-decoration: none;
+        }
+    }
+
+    .card-group-icon-delete {
+      position: absolute;
+      right: -85px;
+      top: 0px;
+        i {
+          color: #99A7B0;
+          opacity: 0.3;
+          transition-duration: 0.2s
+        }
+        i:hover {
+          color: #99A7B0;
+          opacity: 1;
+          transition-duration: 0.2s
+        }
+        a:hover {
+          text-decoration: none;
+        }
+    }
+
+    .card-group-title {
+     font-family: 'Raleway', sans-serif;
+    }
+
+    .card-group-status {
+      font-size: 8px;
+      position: absolute;
+      bottom: 0px;
+      right: 30px;
+    }
 }
 
 .card-user-x {
