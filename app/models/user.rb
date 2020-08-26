@@ -5,7 +5,6 @@ class User < ApplicationRecord
   has_many :receipts
   has_many :members
   has_many :cohorts, through: :members
-
   validates :name, presence: true
   has_one_attached :avatar
 end
