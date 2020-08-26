@@ -7,4 +7,13 @@ class User < ApplicationRecord
   has_many :cohorts, through: :members
   validates :name, presence: true
   has_one_attached :avatar
+
+  def total_receipts
+    self.receipts.sum(:amount)
+  end
+
+  def total_receipts_per_category(category_name)
+    self.receipts.where(category_name: category_name).sum(:amount)
+  end
 end
+
