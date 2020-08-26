@@ -70,7 +70,7 @@ receipt_1 = Receipt.create!(
   store: "La Famille",
   amount: 13,
   description: "Lunch at Le Wagon",
-  category_name: "Restaurants",
+  category_name: "restaurant",
   user_id: user_1.id,
 )
 
@@ -79,7 +79,7 @@ receipt_2 = Receipt.create!(
   store: "Papa Rafaele",
   amount: 16,
   description: "Lunch at Le Wagon",
-  category_name: "Restaurants",
+  category_name: "restaurant",
   user_id: user_1.id,
 )
 
@@ -88,7 +88,7 @@ receipt_3 = Receipt.create!(
   store: "Auchan",
   amount: 120,
   description: "Food shopping for this two weeks",
-  category_name: "Food & Beverage shopping",
+  category_name: "food_and_beverage",
   user_id: user_1.id,
 )
 
@@ -97,7 +97,7 @@ receipt_4 = Receipt.create!(
   store: "Decathlon",
   amount: 212,
   description: "New bike",
-  category_name: "Shopping",
+  category_name: "shopping",
   user_id: user_1.id,
 )
 
@@ -106,7 +106,7 @@ receipt_5 = Receipt.create!(
   store: "Bowling Fun",
   amount: 35,
   description: "Afterwork",
-  category_name: "Entertainment",
+  category_name: "entertainment",
   user_id: user_1.id,
 )
 
@@ -115,7 +115,7 @@ receipt_6 = Receipt.create!(
   store: "Trainline",
   amount: 165,
   description: "Weekend in Milan",
-  category_name: "Transports",
+  category_name: "transport",
   user_id: user_1.id,
 )
 
@@ -124,7 +124,7 @@ receipt_7 = Receipt.create!(
   store: "Maje",
   amount: 420,
   description: "shopping for the year",
-  category_name: "Shopping",
+  category_name: "shopping",
   user_id: user_4.id,
 )
 
@@ -133,7 +133,7 @@ receipt_8 = Receipt.create!(
   store: "Brilliant Costumes",
   amount: 45,
   description: "Costume for jules birthday",
-  category_name: "Others",
+  category_name: "others",
   user_id: user_4.id,
 )
 
@@ -142,7 +142,7 @@ receipt_9 = Receipt.create!(
   store: "Carrefour",
   amount: 30,
   description: "Gin for tonight",
-  category_name: "Food & Beverage shopping",
+  category_name: "food_and_beverage",
   user_id: user_4.id,
 )
 
@@ -151,7 +151,7 @@ receipt_10 = Receipt.create!(
   store: "Ryanair",
   amount: 90,
   description: "Weekend in Greece",
-  category_name: "Transports",
+  category_name: "transport",
   user_id: user_4.id,
 )
 
@@ -160,7 +160,7 @@ receipt_11 = Receipt.create!(
   store: "UGC",
   amount: 8,
   description: "Tenet",
-  category_name: "Entertainment",
+  category_name: "entertainment",
   user_id: user_4.id,
 )
 
@@ -169,6 +169,6 @@ receipt_12 = Receipt.create!(
   store: "Purifiq",
   amount: 5,
   description: "Toothpaste tabs",
-  category_name: "Shopping",
+  category_name: "shopping",
   user_id: user_4.id,
 )
