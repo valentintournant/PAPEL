@@ -3,6 +3,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :receipts
-  has_many :cohorts, dependent: :destroy
+  has_many :members
+  has_many :cohorts, through: :members
+  validates :name, presence: true
   has_one_attached :avatar
 end
