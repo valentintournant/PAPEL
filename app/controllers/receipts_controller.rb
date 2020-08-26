@@ -1,10 +1,6 @@
 class ReceiptsController < ApplicationController
   before_action :set_receipt, only: [:show, :edit, :update, :destroy]
 
-  def index
-    @receipts = Receipt.all
-  end
-
   def show
   end
 

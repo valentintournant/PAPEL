@@ -1,9 +1,18 @@
 <div class="container">
   <div class="card-ticket">
+
     <h2> <%= @receipt.store %> </h2>
     <p id="amount"> <%= @receipt.amount %>€</p>
     <p id="date-color"> <%= @receipt.date.strftime('%A, %b %d') %> </p>
     <p> <%= @receipt.description %></p>
+
+    <div class="card-ticket-text">
+      <h3> <%= @receipt.store %> </h3>
+      <p id="card-ticket-date"> <%= @receipt.date.strftime('%A, %b %d') %> </p>
+      <p id="card-ticket-desc"> <%= @receipt.description %></p>
+    </div>
+      <p id="amount"> <%= @receipt.amount %>€</p>
+
 
 <div class="card-ticket-icons">
   <%= link_to edit_receipt_path(@receipt) do %>
@@ -13,7 +22,30 @@
     <i class=" link far fa-trash-alt" style="font-size: 16px;"></i>
   <% end  %>
 </div>
-
   </div>
-<%= link_to 'Back to receipts', receipts_path %>
+  <%= link_to 'Back to receipts', receipts_path %>
+
+
+<div class="card-group">
+  <div class="card-group-text">
+      <p class="card-group-title"><strong>Holidays in Italy</strong></p>
+      <div class="card-group-icon-edit">
+        <i class="fas fa-pen" style="font-size: 15px;"></i>
+      </div>
+      <div class="card-group-icon-delete">
+        <i class="fas fa-times" style="font-size: 15px;"></i>
+      </div>
+    <p class="card-group-name">Yohan F.</p>
+  </div>
+
+    <p class="card-group-status highlighted highlighted-transport">Owner</p>
+=======
+<%= link_to 'Back to receipts', profile_path(current_user) %>
 </div>
+
+
+
+
+</div>
+
+

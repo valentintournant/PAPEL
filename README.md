@@ -13,7 +13,7 @@ cd PAPEL
 touch .env
 bundle install
 yarn install
-rails db:drop db:create db:migrate db:seeds
+rails db:drop db:create db:migrate db:seed
 ```
 
 ## Heroku
