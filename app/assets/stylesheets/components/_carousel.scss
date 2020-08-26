@@ -1,3 +1,23 @@
-.reviews {
+.carousel-measures {
   height: 300px;
+}
+
+.reviews {
+  max-height: 100%;
+  background-size: cover;
+}
+
+
+
+.carousel-inner {
+margin:auto;
+width:100%
+}
+.carousel-item {
+margin:auto;
+width:100%
+}
+.reviews {
+margin:auto;
+width:100%
 }
