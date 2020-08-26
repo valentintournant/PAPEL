@@ -15,7 +15,7 @@ Cohort.destroy_all
 puts "destroy receipts"
 Receipt.destroy_all
 
-# users
+# Users
 
 puts "create user"
 photo_1 = Dir[File.join(File.dirname(__FILE__), "../app/assets/images/val.jpg")].join
