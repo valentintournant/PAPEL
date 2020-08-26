@@ -19,8 +19,4 @@ class User < ApplicationRecord
   def total_receipts_per_category(category_name)
     self.receipts.where(category_name: category_name).sum(:amount)
   end
-
-  # def percentage_per_category
-  #   total_receipts_per_category * 100 / total_receipts
-  # end
 end
