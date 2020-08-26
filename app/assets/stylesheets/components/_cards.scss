@@ -56,19 +56,33 @@
   width: 300px;
   height: 165px;
   padding: 10px;
+  border-radius: 15px;
   box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
   position: relative;
-
     #amount {
       position: absolute;
       top: 50px;
       right: 20px;
       font-size: 1.75rem;
     }
-    .card-ticket-icons {
+      .card-ticket-icons {
       position: absolute;
       bottom: 5px;
       right: 15px;
+        i {
+          color: #F26766;
+        }
+        i:hover {
+          text-decoration: none;
+          color: #D83E3E;
+        }
+        a {
+          text-decoration: none;
+        }
+      }
+      #date-color {
+        color: #99A7B0;
+      }
       i {
         color: #F26766;
         transition-duration: 0.2s
