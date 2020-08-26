@@ -19,5 +19,13 @@
       <div class="container-buttons">
       <%= link_to 'Back', cohorts_path %>
     </div>
+
+    <%= simple_form_for [@cohort, @member] do |f| %>
+      <%= f.input :user, collection: User.all %>
+      <div class="d-none">
+        <%= f.input :status, input_html: { value: 'participant' } %>
+      </div>
+      <%= f.submit "Ajouter un membre", class: 'btn btn-primary' %>
+    <% end %>
 </div>
 
