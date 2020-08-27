@@ -18,6 +18,10 @@ class CohortsController < ApplicationController
     @cohort = Cohort.new(cohort_params)
     if @cohort.save
       Member.create(cohort: @cohort, user: current_user, status: 'owner')
+      if params[:cohort][:member][:user] != ""
+        member = User.find(params[:cohort][:member][:user])
+        Member.create(cohort: @cohort, user: member, status: 'participant')
+      end
       redirect_to cohorts_path, notice: 'Group was successfully created.'
     else
       render :new
