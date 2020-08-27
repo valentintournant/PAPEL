@@ -1,8 +1,8 @@
 <%= simple_form_for(@cohort) do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
-   <%= f.simple_fields_for :member, Member.new do |m| %>
-  <%= m.input :user, collection: @users %>
+  <%= f.simple_fields_for :member, Member.new do |m| %>
+    <%= m.input :user, collection: @users %>
   <% end %>
   <%= f.button :submit, class: 'btn btn-outline-primary btn-sm ml-2 mt-2' %>
 <% end %>
