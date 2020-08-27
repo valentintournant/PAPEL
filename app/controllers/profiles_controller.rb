@@ -1,6 +1,11 @@
 class ProfilesController < ApplicationController
   def show
     @user = current_user
+    if params.has_key?('category_name')
+      @receipts = Receipt.where(category_name: params[:category_name]).where(user: current_user)
+    else
+      @receipts = current_user.receipts
+    end
   end
 
   def stats
