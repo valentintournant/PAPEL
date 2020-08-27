@@ -2,7 +2,7 @@ class Receipt < ApplicationRecord
   CATEGORIES = {
     'shopping'          => 'Shopping',
     'restaurant'        => 'Restaurant',
-    'food_and_beverage' => 'Food & Beverage Shopping',
+    'food_and_beverage' => 'Food And Beverage Shopping',
     'entertainment'     => 'Entertainment',
     'transport'         => 'Transports',
     'others'            => 'Others',

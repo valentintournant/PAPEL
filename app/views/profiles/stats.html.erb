@@ -7,3 +7,8 @@
     <%= (@user.total_receipts_per_category(key).fdiv(@user_expense) * 100).to_i %> %
   </div>
 <% end %>
+
+<canvas id="myChart"
+        data-labels="<%= @labels.to_json %>",
+        data-percentages="<%= @percentages.to_json %>">
+</canvas>
