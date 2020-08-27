@@ -1,33 +1,29 @@
 <div class="container">
-    <div class="notification">
-      <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-       <div class="notification-content">
-        <p><small><%= @cohort.title %></small></p>
-        <p><strong> <%= @cohort.description %></strong></p>
-      </div>
+  <div class="notification">
+    <% @cohort.members.first(3).each do |member| %>
+      <%= cl_image_tag member.user.avatar.key, height: 50, width: 50, crop: :fill, class: 'avatar-large' %>
+    <% end %>
 
-      <div class="notification-actions">
-        <%= link_to @edit_cohort_path, method: :get do %>
-          <p> Edit <i class="fas fa-pencil-alt"></i></p>
-        <% end %>
+  <div class="notification-actions">
+    <%= link_to @edit_cohort_path, method: :get do %>
+      <p> Edit <i class="fas fa-pencil-alt"></i></p>
+    <% end %>
 
-        <%= link_to @cohort_path, method: :delete, data: { confirm: "Are you sure?" } do %>
-          <p> Delete <i class="far fa-trash-alt"></i></p>
-        <% end %>
-      </div>
-    </div>
-      <div class="container-buttons">
+    <%= link_to @cohort_path, method: :delete, data: { confirm: "Are you sure?" } do %>
+      <p> Delete <i class="far fa-trash-alt"></i></p>
+    <% end %>
+  </div>
+
+  </div>
+    <div class="container-buttons">
       <%= link_to 'Back', cohorts_path %>
-    </div>
+  </div>
 
     <%= simple_form_for [@cohort, @member] do |f| %>
       <%= f.input :user_id, collection: @users %>
-      <div class="d-none">
-        <%= f.input :status, input_html: { value: 'participant' } %>
-      </div>
-      <%= f.submit "Ajouter un membre", class: 'btn btn-primary' %>
+  <div class="d-none">
+    <%= f.input :status, input_html: { value: 'participant' } %>
+  </div>
+    <%= f.submit "Ajouter un membre", class: 'btn btn-primary' %>
     <% end %>
 </div>
-
-
-<%= console %>
