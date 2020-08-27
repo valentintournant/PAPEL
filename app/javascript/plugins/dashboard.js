@@ -11,6 +11,7 @@ const initDashboard = () => {
             labels: labels,
             datasets: [{
                 data: percentages,
+                borderWidth: 0,
                 backgroundColor: [
                     'rgba(182, 60, 60, 1)',
                     'rgba(163, 215, 255, 1)',
@@ -29,12 +30,13 @@ const initDashboard = () => {
                 ],
             }],
           },
-        options: {}
+        options:{
+          legend: {
+            display:false
+          }
+        }
     });
   }
 }
 
 export { initDashboard };
-
-
-
