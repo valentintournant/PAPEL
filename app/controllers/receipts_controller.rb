@@ -34,6 +34,9 @@ class ReceiptsController < ApplicationController
     redirect_to profile_path(current_user), notice: 'Receipt was successfully destroyed.'
   end
 
+  def category_list
+  end
+
   private
 
   def set_receipt
