@@ -1,1 +1,88 @@
 // Specific CSS for your home-page
+.arg-title {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.arguments {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  justify-content: space-between;
+  align: center;
+  margin: 30px;
+    .icon {
+      box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
+      padding: 20px 15px;
+    }
+    .arg-description {
+      text-align: center;
+    }
+    .arg-pic {
+      width: 120px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+    }
+}
+
+.feature-title {
+  text-align: center;
+  margin-top: 50px;
+}
+
+@media(max-width: 992px) {
+  .arguments {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 768px) {
+  .arguments {
+    grid-template-columns: 1fr;
+  }
+}
+
+.killer-feature {
+  background: #EEF7FE;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
+  margin: 30px;
+  padding: 40px 30px;
+  border-radius: 15px;
+}
+
+.feature-1 {
+  background: #EEF7FE;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
+  margin: 30px;
+  padding: 40px 30px;
+  border-radius: 15px;
+}
+
+.feature-2 {
+  background: #EEF7FE;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
+  margin: 30px;
+  padding: 40px 30px;
+  border-radius: 15px;
+  color: white;
+}
+
+.feature-h4 {
+  margin-bottom: 15px;
+}
+
+.feature-text {
+  margin-bottom: 25px;
+}
+
+.carousel-title {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.carousel-part {
+  margin-top: 30px;
+}
+
