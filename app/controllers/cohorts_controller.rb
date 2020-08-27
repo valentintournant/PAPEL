@@ -6,6 +6,7 @@ class CohortsController < ApplicationController
 
   def show
     @member = Member.new
+    @users  = User.where.not(id: current_user.id)
   end
 
   def new

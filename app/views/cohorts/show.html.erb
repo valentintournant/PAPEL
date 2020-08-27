@@ -21,7 +21,7 @@
     </div>
 
     <%= simple_form_for [@cohort, @member] do |f| %>
-      <%= f.input :user, collection: User.all %>
+      <%= f.input :user_id, collection: @users %>
       <div class="d-none">
         <%= f.input :status, input_html: { value: 'participant' } %>
       </div>
@@ -29,3 +29,5 @@
     <% end %>
 </div>
 
+
+<%= console %>

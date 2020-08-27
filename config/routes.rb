@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   #receipts-belong-group
 
   resources :cohorts do
-    resources :members, only: [:create]
+    resources :members, only: [:create, :new]
   end
   resources :profiles, only: [:show] do
     collection do
