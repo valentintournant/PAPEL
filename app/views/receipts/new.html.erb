@@ -1,10 +1,4 @@
 <h1>New receipt:</h1>
 
-<%= simple_form_for(@receipt) do |f| %>
-  <%= f.input :store %>
-  <%= f.input :date %>
-  <%= f.input :amount %>
-  <%= f.input :description %>
-  <%= f.input :category_name, collection: ['shopping', 'restaurant', 'food_and_beverage', 'entertainment', 'transport', 'others'], label: 'Choose a category' %>
-  <%= f.submit %>
-<% end %>
+<%= render 'form', receipt: @receipt %>
+
