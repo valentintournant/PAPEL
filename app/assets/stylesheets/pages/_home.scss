@@ -12,7 +12,7 @@
   align: center;
   margin: 30px;
     .icon {
-      box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
+      // box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
       padding: 20px 15px;
     }
     .arg-description {
@@ -24,6 +24,11 @@
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 10px;
+    }
+    .about-us {
+      height: 150px;
+      width: 150px;
+      margin: auto;
     }
 }
 
