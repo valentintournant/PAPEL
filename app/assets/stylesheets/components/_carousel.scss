@@ -1,23 +1,14 @@
-.carousel-measures {
-  height: 300px;
-}
-
-.reviews {
-  max-height: 100%;
-  background-size: cover;
-}
-
+// .carousel {
+//   height: 360px;
+// }
+// .carousel-inner &gt; .item &gt; img {
+//   height: 360px;
+//   object-fit: contain;
+// }
 
 
-.carousel-inner {
-margin:auto;
-width:100%
-}
-.carousel-item {
-margin:auto;
-width:100%
-}
-.reviews {
-margin:auto;
-width:100%
+.carousel-size {
+  height: 100px;
+  width:  300px;
+  text-align: center;
 }

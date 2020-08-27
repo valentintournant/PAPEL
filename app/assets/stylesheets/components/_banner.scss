@@ -4,10 +4,22 @@
 }
 
 .banner h1 {
-  margin: 0;
-  color: #3F3535;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  color: #3e3e3e;
+  font-size: 64px;
   font-weight: bold;
+  margin-bottom: 15px;
 }
 
+.btn-main-banner {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 50px;
+  background: #F26766;
+  transition: background 0.3s ease;
+}
+
+.btn-main-banner:hover {
+  background: #D83E3E;
+  color: white;
+  text-decoration: none;
+}
