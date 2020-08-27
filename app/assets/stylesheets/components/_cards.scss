@@ -232,5 +232,9 @@
 
 .stats-card {
   padding-top: 20px;
+
+  .notification {
+    display: flex;
+  }
 }
 

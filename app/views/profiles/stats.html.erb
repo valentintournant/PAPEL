@@ -10,23 +10,28 @@
 </canvas>
 
 
-<div class="container stats-card">
-  <% Receipt::CATEGORIES.each do |key, value| %>
-    <% unless @user.total_receipts_per_category(key) == 0 %>
-      <div class="notification">
-        <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-        <div class="notification-content">
-          <div>
-            <% (@user.total_receipts_per_category(key).fdiv(@user_expense) * 100).to_i %>
-            <p><small><%= value %></small></p>
-            <p><strong><%= @user.total_receipts_per_category(key) %> €</strong></p>
+<div class="container">
+  <div class="stats-card">
+    <% Receipt::CATEGORIES.each do |key, value| %>
+      <% unless @user.total_receipts_per_category(key) == 0 %>
+      <%= link_to profile_path(current_user, category_name: key) do %>
+        <div class="notification">
+          <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
+          <div class="notification-content">
+            <div>
+              <% (@user.total_receipts_per_category(key).fdiv(@user_expense) * 100).to_i %>
+              <p><small><%= value %></small></p>
+              <p><strong><%= @user.total_receipts_per_category(key) %> €</strong></p>
+            </div>
+          </div>
+          <div class="notification-actions">
+            <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+            <a href="#">Delete <i class="far fa-trash-alt"></i></a>
           </div>
         </div>
-        <div class="notification-actions">
-          <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-          <a href="#">Delete <i class="far fa-trash-alt"></i></a>
-        </div>
-      </div>
+        <% end %>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
+
