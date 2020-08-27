@@ -77,25 +77,27 @@
       </div>
     </div>
 
+
+  <!-- Carousel -->
     <div class="carousel-title">
       <h2> Our customers love it!</h2>
     </div>
   </div>
-  <!-- Carousel -->
+
   <div class="carousel-part">
-  <div class="d-flex justify-content-center mb-5">
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <% [1, 2, 3].each do |number| %>
-          <div class="carousel-item <%= 'active' if number == 1 %>">
-            <div class="reviews"> <%= image_tag "review-#{number}.png", class: "mw-100" %></div>
-          </div>
-        <% end %>
+    <div class="d-flex justify-content-center mb-5">
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <% [1, 2, 3].each do |number| %>
+            <div class="carousel-item <%= 'active' if number == 1 %>">
+              <div class="reviews"> <%= image_tag "review-#{number}.png", class: "mw-100" %></div>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-  </div>
-</div>
+
 
 
 
