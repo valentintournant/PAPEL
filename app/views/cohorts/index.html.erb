@@ -14,22 +14,22 @@
 
 <!-- Card(s) Show Groups -->
 <% @cohorts.each do |cohort| %>
-  <div class="card-group">
+  <div class="card-group mb-5">
     <%= cl_image_tag cohort.owner.avatar.key, height: 50, width: 50, crop: :fill, class:"card-group-avatar"%>
-  <div class="card-group-text d-flex">
-      <p class="card-group-title"><strong><%= link_to cohort.title, cohort_path(cohort) %></strong></p>
+    <div class="card-group-text d-flex">
+        <p class="card-group-title"><strong><%= link_to cohort.title, cohort_path(cohort) %></strong></p>
 
-      <div class="card-group-icon-edit">
-        <%= link_to edit_cohort_path(cohort), method: :get do %>
+        <div class="card-group-icon-edit">
+          <%= link_to edit_cohort_path(cohort), method: :get do %>
           <i class="fas fa-pen" style="font-size: 14px;"></i>
-        <% end %>
-      </div>
+          <% end %>
+        </div>
         <div class="card-group-icon-delete">
           <%= link_to cohort_path(cohort), method: :delete, data: { confirm: "Are you sure?" } do %>
           <i class="fas fa-times" style="font-size: 14px;"></i>
-        <% end %>
-      </div>
-      <p class="card-group-name"><%= cohort.owner.name %></p>
+          <% end %>
+        </div>
+        <p class="card-group-name"><%= cohort.owner.name %></p>
     </div>
   </div>
 <% end %>
