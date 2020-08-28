@@ -61,6 +61,12 @@ member_cohort = Member.create!(
   cohort_id: cohort_italy.id,
 )
 
+member_cohort = Member.create!(
+  status: 'owner',
+  user_id: user_4.id,
+  cohort_id: cohort_london.id,
+)
+
 puts "#{Cohort.count}"
 
 # receipts
