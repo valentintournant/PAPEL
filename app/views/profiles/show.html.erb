@@ -19,6 +19,8 @@
     </div>
   </div>
 
+  <%= link_to "My groups", cohorts_path, class: "btn-main mt-5 d-flex justify-content-center"%>
+
   <div class="mt-5">
     <% @receipts.each do |receipt| %>
       <% icon_name = "ic-#{receipt.category_name}.png" %>
