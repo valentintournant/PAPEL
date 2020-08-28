@@ -62,7 +62,9 @@
       <div class="feature-body">
         <h4 class="feature-h4"><strong>STOCK</strong> your receipt.</h4>
         <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum tristique tortor mattis sodales. Praesent vitae rhoncus odio. Mauris ac mauris pulvinar.</p>
+        <% if current_user %>
         <%= link_to "Join us", profile_path(current_user), class: "btn-main" %>
+        <% end %>
       </div>
     </div>
   </div>
