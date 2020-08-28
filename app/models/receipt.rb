@@ -5,7 +5,7 @@ class Receipt < ApplicationRecord
     'food_and_beverage' => 'Food and Beverage',
     'entertainment'     => 'Entertainment',
     'transport'         => 'Transports',
-    'others'            => 'Others',
+    'others'            => 'Others'
   }
 
   AUTHORIZED_CATEGORIES = CATEGORIES.keys
@@ -15,5 +15,5 @@ class Receipt < ApplicationRecord
   validates :store, presence: true
   validates :date, presence: true
   validates :amount, presence: true
-  validates :category_name, inclusion: {in: AUTHORIZED_CATEGORIES }
+  validates :category_name, inclusion: { in: AUTHORIZED_CATEGORIES }
 end
