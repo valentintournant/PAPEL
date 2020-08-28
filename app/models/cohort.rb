@@ -4,7 +4,7 @@ class Cohort < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
-  accepts_nested_attributes_for :member
+  accepts_nested_attributes_for :members
   # def owner
 
   # end
