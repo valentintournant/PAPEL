@@ -16,6 +16,7 @@
     <%= render 'shared/flashes' %>
 
     <%= yield %>
+
     <div class="footer">
       <div class="footer-links">
         <a href="#"><i class="fab fa-github"></i></a>
@@ -23,6 +24,26 @@
         <a href="#"><i class="fab fa-facebook"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-phone">
+      <div class="footer-icons">
+        <%= link_to root_path do %>
+        <i class="fas fa-home"></i>
+        <% end %>
+        <%= link_to category_list_receipts_path do %>
+        <i class="fas fa-search"></i>
+        <% end %>
+        <%= link_to new_receipt_path do %>
+       <div class="btn-plus-icon"><i class="fas fa-plus"></i></div>
+       <% end %>
+        <%= link_to stats_profiles_path do %>
+        <i class="fas fa-chart-pie"></i>
+        <% end %>
+        <%= link_to profile_path(current_user) do %>
+        <i class="far fa-user"></i>
+        <% end %>
       </div>
     </div>
   </body>
