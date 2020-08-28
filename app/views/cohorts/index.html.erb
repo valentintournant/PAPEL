@@ -1,6 +1,6 @@
 <!-- Header -->
 <div class="container full-height">
-  <h1>My
+  <h1 class= "mt-4">My
     <i class= "highlighted highlighted-transport">Groups</i>
   </h1>
   <h2>Details</h2>
@@ -10,7 +10,6 @@
     <div class="btn-add">
       <%= link_to "+", new_cohort_path %>
     </div>
-</div>
 
 <!-- Card(s) Show Groups -->
 <% @cohorts.each do |cohort| %>
@@ -33,7 +32,7 @@
     </div>
   </div>
 <% end %>
-
+</div>
 
 
 
