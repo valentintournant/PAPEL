@@ -1,13 +1,15 @@
 <!-- Header -->
-<div class="container">
-  <h1>Groups</h1>
+<div class="container highlighted ">
+  <h1>My
+    <i class= "highlighted highlighted-transport">Groups</i>
+  </h1>
   <h2>Details</h2>
-  <%= pluralize @cohorts.size, "group" %>
-  <div class=" container card-line-header-x">
+    <%= pluralize @cohorts.size, "group" %>
+  <div class="container card-line-header-x">
   </div>
-  <div class="btn-add">
-  <%= link_to "+", new_cohort_path %>
-  </div>
+    <div class="btn-add">
+      <%= link_to "+", new_cohort_path %>
+    </div>
 </div>
 
 <!-- Card(s) Show Groups -->
