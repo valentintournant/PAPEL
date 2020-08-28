@@ -5,13 +5,8 @@
         <h2 class="title"> Create a group </h2>
           <%= render 'form', cohort: @cohort %>
         <div class="mt-4">
-          <%= link_to cohorts_path, class: "navbar-brand" do %>
-        <button type="button" class="btn btn-primary">Back to groups</button>
-        <% end %>
-
-      <%= link_to root_path, class: "navbar-brand" do %>
-      <button type="button" class="btn btn-primary">Back to the menu</button>
-      <% end %>
+          <%= link_to "Back to groups", cohorts_path, class: "btn-main"  %>
+          <%= link_to "Back to menu", root_path, class: "btn-main"  %>
         </div>
       </div>
     </div>

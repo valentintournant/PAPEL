@@ -1,4 +1,21 @@
 .card-line-header-x {
   border-bottom: 1px solid grey;
+  opacity: 0.2;
+  margin-top: 10px;
+}
 
+
+h3 {
+  color: #999999;
+}
+
+.owner-tag {
+  background-color: rgba(242, 103, 103, 0.2);
+  border-radius: 5px;
+  color: rgb(242, 103, 102)
+}
+
+img {
+  height: 60px;
+  width: 60px;
 }

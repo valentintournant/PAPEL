@@ -50,15 +50,21 @@ cohort_italy = Cohort.create!(
   description: "Groups for our holidays and remember our expenses.",
 )
 
-cohort_london = Cohort.create!(
-  title: "Budget to London",
-  description: "Expenses with Julio on London.",
+cohort_pau = Cohort.create!(
+  title: "Budget to Pau",
+  description: "Expenses with Julio in Pau.",
 )
 
 member_cohort = Member.create!(
   status: 'owner',
   user_id: user_4.id,
   cohort_id: cohort_italy.id,
+)
+
+member_cohort = Member.create!(
+  status: 'owner',
+  user_id: user_4.id,
+  cohort_id: cohort_pau.id,
 )
 
 puts "#{Cohort.count}"
@@ -125,7 +131,7 @@ receipt_7 = Receipt.create!(
   amount: 420,
   description: "shopping for the year",
   category_name: "shopping",
-  user_id: user_4.id,
+  user_id: user_1.id,
 )
 
 receipt_8 = Receipt.create!(
@@ -134,7 +140,7 @@ receipt_8 = Receipt.create!(
   amount: 45,
   description: "Costume for jules birthday",
   category_name: "others",
-  user_id: user_4.id,
+  user_id: user_1.id,
 )
 
 receipt_9 = Receipt.create!(
@@ -143,7 +149,7 @@ receipt_9 = Receipt.create!(
   amount: 30,
   description: "Gin for tonight",
   category_name: "food_and_beverage",
-  user_id: user_4.id,
+  user_id: user_1.id,
 )
 
 receipt_10 = Receipt.create!(
@@ -152,7 +158,7 @@ receipt_10 = Receipt.create!(
   amount: 90,
   description: "Weekend in Greece",
   category_name: "transport",
-  user_id: user_4.id,
+  user_id: user_1.id,
 )
 
 receipt_11 = Receipt.create!(
@@ -161,10 +167,117 @@ receipt_11 = Receipt.create!(
   amount: 8,
   description: "Tenet",
   category_name: "entertainment",
-  user_id: user_4.id,
+  user_id: user_1.id,
 )
 
 receipt_12 = Receipt.create!(
+  date: "2020 july 6",
+  store: "Purifiq",
+  amount: 5,
+  description: "Toothpaste tabs",
+  category_name: "shopping",
+  user_id: user_1.id,
+)
+receipt_13 = Receipt.create!(
+  date: "2020 july 23",
+  store: "La Famille",
+  amount: 13,
+  description: "Lunch at Le Wagon",
+  category_name: "restaurant",
+  user_id: user_4.id,
+)
+
+receipt_14 = Receipt.create!(
+  date: "2020 august 2",
+  store: "Papa Rafaele",
+  amount: 16,
+  description: "Lunch at Le Wagon",
+  category_name: "restaurant",
+  user_id: user_4.id,
+)
+
+receipt_15 = Receipt.create!(
+  date: "2020 june 30",
+  store: "Auchan",
+  amount: 120,
+  description: "Food shopping for this two weeks",
+  category_name: "food_and_beverage",
+  user_id: user_4.id,
+)
+
+receipt_16 = Receipt.create!(
+  date: "2020 july 29",
+  store: "Decathlon",
+  amount: 212,
+  description: "New bike",
+  category_name: "shopping",
+  user_id: user_4.id,
+)
+
+receipt_17 = Receipt.create!(
+  date: "2020 june 23",
+  store: "Bowling Fun",
+  amount: 35,
+  description: "Afterwork",
+  category_name: "entertainment",
+  user_id: user_4.id,
+)
+
+receipt_18 = Receipt.create!(
+  date: "2020 august 20",
+  store: "Trainline",
+  amount: 165,
+  description: "Weekend in Milan",
+  category_name: "transport",
+  user_id: user_4.id,
+)
+
+receipt_19 = Receipt.create!(
+  date: "2020 june 28",
+  store: "Maje",
+  amount: 420,
+  description: "shopping for the year",
+  category_name: "shopping",
+  user_id: user_4.id,
+)
+
+receipt_20 = Receipt.create!(
+  date: "2020 july 31",
+  store: "Brilliant Costumes",
+  amount: 45,
+  description: "Costume for jules birthday",
+  category_name: "others",
+  user_id: user_4.id,
+)
+
+receipt_21 = Receipt.create!(
+  date: "2020 july 12",
+  store: "Carrefour",
+  amount: 30,
+  description: "Gin for tonight",
+  category_name: "food_and_beverage",
+  user_id: user_4.id,
+)
+
+receipt_22 = Receipt.create!(
+  date: "2020 august 15",
+  store: "Ryanair",
+  amount: 90,
+  description: "Weekend in Greece",
+  category_name: "transport",
+  user_id: user_4.id,
+)
+
+receipt_23 = Receipt.create!(
+  date: "2020 june 3",
+  store: "UGC",
+  amount: 8,
+  description: "Tenet",
+  category_name: "entertainment",
+  user_id: user_4.id,
+)
+
+receipt_24 = Receipt.create!(
   date: "2020 july 6",
   store: "Purifiq",
   amount: 5,

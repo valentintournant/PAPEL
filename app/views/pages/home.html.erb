@@ -62,7 +62,7 @@
         <div class="feature-body">
           <h4 class="feature-h4"><strong>STOCK</strong> your receipt.</h4>
           <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum tristique tortor mattis sodales. Praesent vitae rhoncus odio. Mauris ac mauris pulvinar.</p>
-          <a href="#" class="btn-main">Join us</a>
+          <%= link_to "Join us", profile_path(current_user), class: "btn-main" %>
         </div>
       </div>
     </div>
@@ -72,7 +72,7 @@
         <div class="feature-body">
           <h4 class="feature-h4"><strong>SHARE</strong> with your friends.</h4>
           <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum tristique tortor mattis sodales. Praesent vitae rhoncus odio.</p>
-          <a href="#" class="btn-main">Come with your friends</a>
+          <%= link_to "Come with your friends", cohorts_path(current_user), class: "btn-main" %>
         </div>
       </div>
     </div>

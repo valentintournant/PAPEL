@@ -1,29 +1,24 @@
 <div class="container">
-  <div class="notification">
-    <% @cohort.members.first(3).each do |member| %>
-      <%= cl_image_tag member.user.avatar.key, height: 50, width: 50, crop: :fill, class: 'avatar-large' %>
-    <% end %>
 
-  <div class="notification-actions">
-    <%= link_to @edit_cohort_path, method: :get do %>
-      <p> Edit <i class="fas fa-pencil-alt"></i></p>
-    <% end %>
-
-    <%= link_to @cohort_path, method: :delete, data: { confirm: "Are you sure?" } do %>
-      <p> Delete <i class="far fa-trash-alt"></i></p>
-    <% end %>
+  <h1> <%= @cohort.title %> </h1>
+  <div class="d-flex">
+    <h3> <%= @cohort.owner.name.capitalize %> </h3>
+    <p class="owner-tag ml-3 mt-1">Owner</p>
   </div>
-
-  </div>
-    <div class="container-buttons">
-      <%= link_to 'Back', cohorts_path %>
-  </div>
-
+    <div class="avatar p-3 d-flex">
+      <% @cohort.members.first(4).each do |member| %>
+        <%= cl_image_tag member.user.avatar.key, height: 50, width: 50, crop: :fill, class: 'avatar-large' %>
+      <% end %>
+    </div>
+    <div class="card-line-header-x"> </div>
+  <div class="mt-3">
     <%= simple_form_for [@cohort, @member] do |f| %>
-      <%= f.input :user_id, collection: @users %>
+    <%= f.input :user_id, collection: @users %>
   <div class="d-none">
     <%= f.input :status, input_html: { value: 'participant' } %>
   </div>
-    <%= f.submit "Ajouter un membre", class: 'btn btn-primary' %>
+    <%= f.submit "Ajouter un membre", class: 'btn-main mb-5' %>
     <% end %>
+    <%= link_to "Add a receipt",  new_receipt_path, class: "btn-main" %>
+  </div>
 </div>
