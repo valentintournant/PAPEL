@@ -1,12 +1,12 @@
 
 <!-- banner -->
 
-  <div class="banner">
-    <div class="container">
-      <h1> <strong>PapeL</strong></h1>
-      <a class="btn-main-banner" href="#">Try now!</a>
-    </div>
+<div class="banner">
+  <div class="container">
+    <h1> <strong>PapeL</strong></h1>
+    <a class="btn-main-banner" href="#">Try now!</a>
   </div>
+</div>
 
 <div class="container">
 <!-- Arguments -->
@@ -17,7 +17,7 @@
 
   <div class="arguments">
     <div class="icon">
-      <div class="about-us"> <%= image_tag "about-1.png", class: "mw-100" %></div>
+      <div class="about-us"> <%= image_tag "about-1.png"%></div>
       <div class="arg-description">
         <h5><strong>Eco-friendly</strong></h5>
         <p>Make your recepits useful again.</p>
@@ -25,7 +25,7 @@
     </div>
 
     <div class="icon">
-      <div class="about-us"> <%= image_tag "about-2.png", class: "mw-100" %></div>
+      <div class="about-us"> <%= image_tag "about-2.png"%></div>
       <div class="arg-description">
         <h5><strong>Friendly</strong></h5>
         <p>Create groups to share your recepits.</p>
@@ -33,7 +33,7 @@
     </div>
 
     <div class="icon">
-      <div class="about-us"> <%= image_tag "about-3.png", class: "mw-100" %></div>
+      <div class="about-us"> <%= image_tag "about-3.png"%></div>
       <div class="arg-description">
         <h5><strong>Manage</strong></h5>
         <p>Manage your money like a pro.</p>
@@ -47,42 +47,42 @@
     <h2>Are you ready for it?</h2>
   </div>
 
-    <div class="killer-feature">
-      <div class="feature">
-        <div class="feature-body">
-          <h4 class="feature-h4"><strong>SCAN</strong> your ticket.</h4>
-          <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum tristique tortor mattis sodales. Praesent vitae rhoncus odio. Mauris ac mauris pulvinar, posuere libero ac, faucibus magna. Quisque orci dolor, finibus ultrices est sed, condimentum mollis mi.</p>
-          <a href="#" class="btn-main">Start now</a>
-        </div>
+  <div class="killer-feature">
+    <div class="feature">
+      <div class="feature-body">
+        <h4 class="feature-h4"><strong>SCAN</strong> your ticket.</h4>
+        <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum tristique tortor mattis sodales. Praesent vitae rhoncus odio. Mauris ac mauris pulvinar, posuere libero ac, faucibus magna. Quisque orci dolor, finibus ultrices est sed, condimentum mollis mi.</p>
+        <a href="#" class="btn-main">Start now</a>
       </div>
-    </div>
-
-    <div class="feature-1">
-      <div class="feature">
-        <div class="feature-body">
-          <h4 class="feature-h4"><strong>STOCK</strong> your receipt.</h4>
-          <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum tristique tortor mattis sodales. Praesent vitae rhoncus odio. Mauris ac mauris pulvinar.</p>
-          <%= link_to "Join us", profile_path(current_user), class: "btn-main" %>
-        </div>
-      </div>
-    </div>
-
-    <div class="feature-2">
-      <div class="feature">
-        <div class="feature-body">
-          <h4 class="feature-h4"><strong>SHARE</strong> with your friends.</h4>
-          <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum tristique tortor mattis sodales. Praesent vitae rhoncus odio.</p>
-          <%= link_to "Come with your friends", cohorts_path(current_user), class: "btn-main" %>
-        </div>
-      </div>
-    </div>
-
-
-  <!-- Carousel -->
-    <div class="carousel-title">
-      <h2> Our customers love it!</h2>
     </div>
   </div>
+
+  <div class="feature-1">
+    <div class="feature">
+      <div class="feature-body">
+        <h4 class="feature-h4"><strong>STOCK</strong> your receipt.</h4>
+        <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum tristique tortor mattis sodales. Praesent vitae rhoncus odio. Mauris ac mauris pulvinar.</p>
+        <%= link_to "Join us", profile_path(current_user), class: "btn-main" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-2">
+    <div class="feature">
+      <div class="feature-body">
+        <h4 class="feature-h4"><strong>SHARE</strong> with your friends.</h4>
+        <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum tristique tortor mattis sodales. Praesent vitae rhoncus odio.</p>
+        <%= link_to "Come with your friends", cohorts_path(current_user), class: "btn-main" %>
+      </div>
+    </div>
+  </div>
+
+
+<!-- Carousel -->
+  <div class="carousel-title">
+    <h2> Our customers love it!</h2>
+  </div>
+</div>
 
   <div class="carousel-part">
     <div class="d-flex justify-content-center mb-5">
@@ -90,14 +90,12 @@
         <div class="carousel-inner">
           <% [1, 2, 3].each do |number| %>
             <div class="carousel-item <%= 'active' if number == 1 %>">
-              <div class="reviews"> <%= image_tag "review-#{number}.png", class: "mw-100" %></div>
+              <div class="reviews"> <%= image_tag "review-#{number}.png"%></div>
             </div>
           <% end %>
         </div>
       </div>
     </div>
   </div>
-
-
 
 
