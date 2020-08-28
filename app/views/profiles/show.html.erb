@@ -40,21 +40,12 @@
       <% end %>
     <% end %>
   </div>
-
+  
   <div class="d-flex">
-    <%= link_to stats_profiles_path  do  %>
-      <button class="btn-main m-5">See my stats</button>
-    <% end  %>
-
-    <%= link_to  new_receipt_path do %>
-      <button class="btn-main m-5">Add a receipt</button>
-    <% end %>
-
-    <%= link_to   category_list_receipts_path do %>
-      <button class="btn-main m-5">Categories</button>
-    <% end %>
+    <%= link_to "See my stats", stats_profiles_path, class: "btn-main m-5" %>
+    <%= link_to "Add a receipt",  new_receipt_path, class: "btn-main m-5" %>
+    <%= link_to "Categories", category_list_receipts_path, class: "btn-main m-5" %>
   </div>
-
 </div>
 
 

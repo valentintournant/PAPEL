@@ -50,15 +50,21 @@ cohort_italy = Cohort.create!(
   description: "Groups for our holidays and remember our expenses.",
 )
 
-cohort_london = Cohort.create!(
-  title: "Budget to London",
-  description: "Expenses with Julio on London.",
+cohort_pau = Cohort.create!(
+  title: "Budget to Pau",
+  description: "Expenses with Julio in Pau.",
 )
 
 member_cohort = Member.create!(
   status: 'owner',
   user_id: user_4.id,
   cohort_id: cohort_italy.id,
+)
+
+member_cohort = Member.create!(
+  status: 'owner',
+  user_id: user_4.id,
+  cohort_id: cohort_pau.id,
 )
 
 puts "#{Cohort.count}"

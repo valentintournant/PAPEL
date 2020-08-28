@@ -1,6 +1,6 @@
 <div class="container">
   <div class="notification">
-    <% @cohort.members.first(3).each do |member| %>
+    <% @cohort.members.first(4).each do |member| %>
       <%= cl_image_tag member.user.avatar.key, height: 50, width: 50, crop: :fill, class: 'avatar-large' %>
     <% end %>
 
@@ -15,15 +15,15 @@
   </div>
 
   </div>
-    <div class="container-buttons">
-      <%= link_to 'Back', cohorts_path %>
-  </div>
+
+   <%= link_to "Back",  cohorts_path, class: "btn-main m-5" %>
+
 
     <%= simple_form_for [@cohort, @member] do |f| %>
       <%= f.input :user_id, collection: @users %>
   <div class="d-none">
     <%= f.input :status, input_html: { value: 'participant' } %>
   </div>
-    <%= f.submit "Ajouter un membre", class: 'btn btn-primary' %>
+    <%= f.submit "Ajouter un membre", class: 'btn-main' %>
     <% end %>
 </div>
