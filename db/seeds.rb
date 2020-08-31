@@ -309,3 +309,18 @@ receipt_24 = Receipt.create!(
   user_id: user_4.id,
   address: "52 rue d'Angleterre, 59000 Lille",
 )
+
+file = URI.open('https://res.cloudinary.com/dn3zpeebk/image/upload/v1598876244/3x75yc6enlhc14f61oq8tw697awo.png')
+
+receipt_25 = Receipt.create!(
+  date: "2020 august 31",
+  store: "decathlon",
+  amount: 21,
+  description: "notre ticket test",
+  category_name: "entertainment",
+  user_id: user_4.id,
+  address: "52 rue d'Angleterre, 59000 Lille",
+)
+
+receipt_25.photo.attach(io: file, filename: 'decathlon test', content_type: 'image/png')
+

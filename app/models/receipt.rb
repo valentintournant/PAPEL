@@ -20,6 +20,8 @@ class Receipt < ApplicationRecord
   validates :amount, presence: true
   validates :category_name, inclusion: { in: AUTHORIZED_CATEGORIES }
 
+  has_one_attached :photo
+
   include PgSearch::Model
   pg_search_scope :search_by_store_and_description,
     against: [:store, :description],
