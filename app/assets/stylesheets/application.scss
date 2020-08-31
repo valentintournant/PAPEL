@@ -17,3 +17,6 @@
 @import "pages/show_profile";
 @import "pages/cohort";
 
+body {
+  margin-bottom: 71px; // for the fixed bottom navbar
+}
