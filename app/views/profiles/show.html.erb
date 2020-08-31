@@ -9,16 +9,16 @@
       <% else %>
         <%= cl_image_tag 'no-avatar.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% end %>
-      <h2 class=" mb-2 mt-1"> <%= @user.name.capitalize %> </h2>
+      <h2 class="mb-2 mt-1"> <%= @user.name.capitalize %> </h2>
     </div>
     <div class="card-user-infos ml-3">
       <div class="d-flex">
-       <img class="mt-1"src="https://image.flaticon.com/icons/svg/3062/3062544.svg" alt="">
-        <h1 class="ml-2"> <strong> <%= @user.receipts.count %> </strong></h1>
+       <i class=""><%= image_tag "ticket.svg" %></i>
+        <h1 class="ml-3 mt-1"> <strong> <%= @user.receipts.count %> </strong></h1>
       </div>
-      <div class="mt-1 ml-4">
+      <div class="d-flex mt-2 ">
         <h2> You spent </h2>
-        <p class="ml-3"> <strong>  <%=@user.total_receipts %> €</strong></p>
+        <h2 class="ml-1">  <%=@user.total_receipts %> €</h2>
       </div>
     </div>
   </div>
