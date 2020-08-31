@@ -4,18 +4,23 @@
  </h1>
 
   <div class="card-user-x mt-5">
-    <div class="avatar">
+    <div class="left-content p-4 mb-1 mt-2">
       <% if current_user.avatar.attached? %>
         <%= cl_image_tag current_user.avatar.key, height: 50, width: 50, crop: :fill, class: 'avatar dropdown-toggle', id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% else %>
         <%= cl_image_tag 'no-avatar.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% end %>
+      <h2 class=" mb-2 mt-1"> <%= @user.name.capitalize %> </h2>
     </div>
-    <div class="card-user-infos ml-4">
-      <h2> Number of PapeL : </h2>
-      <h3><%= @user.receipts.count %></h3>
-      <h2 class="mt-1"> <%= @user.name %> </h2>
-      <p>See your receipts below!</p>
+    <div class="card-user-infos ml-3">
+      <div class="d-flex">
+       <img class="mt-1"src="https://image.flaticon.com/icons/svg/3062/3062544.svg" alt="">
+        <h1 class="ml-2"> <strong> <%= @user.receipts.count %> </strong></h1>
+      </div>
+      <div class="mt-1 ml-4">
+        <h2> You spent </h2>
+        <p class="ml-3"> <strong>  <%=@user.total_receipts %> €</strong></p>
+      </div>
     </div>
   </div>
 
@@ -44,9 +49,7 @@
               <p><strong><%=  receipt.store  %></strong></p>
             </div>
             <div>
-              <%= link_to receipt_path(receipt),method: :delete, data: { confirm: "Are you sure?" } do %>
-                <i class="link far fa-trash-alt mt-2" style="font-size: 25px;"></i>
-              <% end  %>
+              <p class=" ml-3"><strong><%= receipt.amount %>€</strong></p>
             </div>
           </div>
         </div>
