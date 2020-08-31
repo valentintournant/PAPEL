@@ -9,11 +9,5 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
 
-  def test_service
-    receipt = Receipt.last
 
-    text = ImageReaderService.call(receipt.photo.key)
-
-    @result = TextParserService.new(text).call
-  end
 end

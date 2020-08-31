@@ -13,6 +13,21 @@ class ReceiptsController < ApplicationController
     end
   end
 
+  def read_receipt
+    # TODO: (3) s'assurer qu'on arrive ici avec le formulaire
+    # TODO: (4) recuperer l'id de cloudinary grâce aux params
+
+    receipt = Receipt.last
+
+    text = ImageReaderService.call(receipt.photo.key)
+
+    receipt = TextParserService.new(text).call
+
+    # TODO: (8) tu rediriges vers la new avec les params permettant d'auto-remplir le formulaire
+
+    # raise
+  end
+
   def new
     @receipt = Receipt.new
   end

@@ -1,5 +1,7 @@
 class TextParserService
 
+  # TODO: implement the TextParserService for Alexesens
+
   def initialize(text)
     @text = text
   end
@@ -7,6 +9,8 @@ class TextParserService
   def call
     # 1. find the store name
     return parse_decathlon_receipt if @text.downcase.include? 'decathlon'
+
+    return parse_alexesens_receipt if true # TODO: (5) replace it
 
     # ticket is not yet know
     { amount: 'unknow ticket' }
@@ -21,8 +25,9 @@ class TextParserService
   end
 
   def parse_alexesens_receipt
-    # ...
+    # TODO: (6) split,strip on the @text
 
+    # TODO: (7) return a Receipt.new()
   end
 
 end
