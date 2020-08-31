@@ -26,11 +26,8 @@
               <div>
                 <% (@user.total_receipts_per_category(key).fdiv(@user_expense) * 100).to_i %>
                 <p><small><%= value %></small></p>
-<<<<<<< HEAD
-=======
                 <p><strong><%= @user.total_receipts_per_category(key) %> €</strong></p>
                 <p><strong><%=(@user.total_receipts_per_category(key).fdiv(@user_expense) * 100).to_i %> %</strong></p>
->>>>>>> 582b1480c43f4b9e2d29ca41d55dc556d4781849
               </div>
               <div>
                 <p><strong><%= @user.total_receipts_per_category(key) %> €</strong></p>
