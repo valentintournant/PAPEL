@@ -19,10 +19,12 @@ class ReceiptsController < ApplicationController
 
   def create
     @receipt = Receipt.new(receipt_params)
+
     @receipt.user = current_user
     if @receipt.save
       redirect_to receipt_path(@receipt), notice: 'Receipt was successfully created.'
     else
+      raise
       render :new
     end
   end

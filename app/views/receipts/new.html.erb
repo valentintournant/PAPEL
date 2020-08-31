@@ -1,8 +1,42 @@
 <div class="container">
-  <div class="row justify-content-center">
-    <div class="col-12 col-lg-8">
-      <h1 class='mt-4'>New receipt</h1>
-      <%= render 'form', receipt: @receipt %>
+  <div class="row">
+    <div class="col-12">
+      <div class="form-post">
+        <h1>New receipt</h1>
+
+          <%= simple_form_for @receipt do |f| %>
+            <div class="row">
+              <div class="col-6">
+                <%= f.input :store, placeholder: "Auchan" %>
+              </div>
+              <div class="col-6">
+                <%= f.input :amount, placeholder: "300"  %>
+              </div>
+              <div class="col-12">
+                <%= f.input :description, placeholder: "Food shopping for the week.."  %>
+                <%= f.input :date %>
+                <%= f.input :address, placeholder: "52 rue d'Angleterre 59000 Lille" %>
+
+                <!-- checkboxes -->
+
+                <div class="form-group">
+                  <label class="control-label check_boxes optional">Categories</label>
+                  <input type="hidden" name="receipt[category_name]" value="" id="category_value">
+                  <div class="category-choices">
+                    <% Receipt::CATEGORIES.each do |key, category| %>
+                      <input type="checkbox" class="checkbox" value="<%= category %>"  name="receipt[category_name]" id="<%= category %>">
+                      <label for="<%= key %>">
+                        <!-- <i class="fa fa-check"></i> -->
+                        <%= category %>
+                      </label>
+                    <% end %>
+                   </div>
+                </div>
+                <%= f.submit :submit, class: ' btn-main btn-sm ml-2 mt-2 mb-4' %>
+              </div>
+            </div>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>
