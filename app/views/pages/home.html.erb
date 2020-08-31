@@ -1,18 +1,21 @@
 
 <!-- banner -->
-
 <div class="banner">
   <div class="container">
-    <h1> <strong>PapeL</strong></h1>
-    <a class="btn-main-banner" href="#">Try now!</a>
+    <div class="title-papel">
+      <h1><strong>PapeL</strong></h1>
+    </div>
+      <div class="title-baiseline mb-4">
+        <h3>Make your receipts usefull again!</h3>
+    </div>
+      <a class="btn-main-banner" href="#">Try now!</a>
   </div>
 </div>
 
-<div class="container">
 <!-- Arguments -->
-
+<div class="container">
   <div class="arg-title">
-    <h2>Why choose us?</h2>
+    <h2>Why <i class="highlighted highlighted-food">choose us?</i></h2>
   </div>
 
   <div class="arguments">
@@ -20,15 +23,15 @@
       <div class="about-us"> <%= image_tag "about-1.png"%></div>
       <div class="arg-description">
         <h5><strong>Eco-friendly</strong></h5>
-        <p>Make your recepits useful again.</p>
+        <p>Make your receipts useful again.</p>
       </div>
     </div>
 
     <div class="icon">
       <div class="about-us"> <%= image_tag "about-2.png"%></div>
       <div class="arg-description">
-        <h5><strong>Friendly</strong></h5>
-        <p>Create groups to share your recepits.</p>
+        <h5><strong>Social</strong></h5>
+        <p>Create groups to share your receipts.</p>
       </div>
     </div>
 
@@ -44,14 +47,14 @@
   <!-- Features -->
 
   <div class="feature-title">
-    <h2>Are you ready for it?</h2>
+    <h2>Are you <i class="highlighted highlighted-vacation">ready for it?</i></h2>
   </div>
 
   <div class="killer-feature">
     <div class="feature">
       <div class="feature-body">
         <h4 class="feature-h4"><strong>SCAN</strong> your ticket.</h4>
-        <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum tristique tortor mattis sodales. Praesent vitae rhoncus odio. Mauris ac mauris pulvinar, posuere libero ac, faucibus magna. Quisque orci dolor, finibus ultrices est sed, condimentum mollis mi.</p>
+        <p class="feature-text text-justify">Enter the type of expense you are logging in PapeL. <br> It could be shopping, food, fuel, shopping, or anything else! Just fill in the costs and let PapeL do the math for you 🤟</p>
         <a href="#" class="btn-main">Start now</a>
       </div>
     </div>
@@ -61,7 +64,7 @@
     <div class="feature">
       <div class="feature-body">
         <h4 class="feature-h4"><strong>STOCK</strong> your receipt.</h4>
-        <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum tristique tortor mattis sodales. Praesent vitae rhoncus odio. Mauris ac mauris pulvinar.</p>
+        <p class="feature-text text-justify">No more wallets and pockets full of receipts! Let PapeL store them for you in a few clicks. Take a picture and bingo your ticket is added to your profile 💪</p>
         <% if current_user %>
         <%= link_to "Join us", profile_path(current_user), class: "btn-main" %>
         <% end %>
@@ -73,16 +76,15 @@
     <div class="feature">
       <div class="feature-body">
         <h4 class="feature-h4"><strong>SHARE</strong> with your friends.</h4>
-        <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras interdum tristique tortor mattis sodales. Praesent vitae rhoncus odio.</p>
-        <%= link_to "Come with your friends", cohorts_path(current_user), class: "btn-main" %>
+        <p class="feature-text text-justify">PapeL helps you share your lifestyle and brings you closer to friends, family and flatmates. Nothing is hidden. All logged expenses are visible to the group, and everyone can add their own 🤩</p>
+        <%= link_to "Share-it", cohorts_path(current_user), class: "btn-main" %>
       </div>
     </div>
   </div>
 
-
 <!-- Carousel -->
   <div class="carousel-title">
-    <h2> Our customers love it!</h2>
+    <h2>Our customers<i class="highlighted highlighted-transport">love it!</i></h2>
   </div>
 </div>
 
