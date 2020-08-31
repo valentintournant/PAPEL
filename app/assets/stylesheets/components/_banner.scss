@@ -123,33 +123,33 @@ section .wave.wave4 {
 }
 
 
-// .mouse {
-//   width: 30px;
-//   height: 70px;
-//   border: 2px solid white;
-//   border-radius: 60px;
-// }
+.mouse {
+  width: 30px;
+  height: 70px;
+  border: 2px solid white;
+  border-radius: 60px;
+}
 
-// .mouse::before {
-//   content: "";
-//   width: 10px;
-//   height: 10px;
-//   position: absolute;
-//   top: 30px;
-//   background: white;
-//   left: 50%;
-//   transform: translateX(-50%);
-//   border-radius: 50%;
-//   opacity: 1;
-//   animation: mouse 2s infinite;
-// }
-// @keyframes mouse {
-//   from{
-//     opacity: 1;
-//     top: 30px;
-//   }
-//   to{
-//     opacity: 0;
-//     top: 150px;
-//   }
-// }
+.mouse::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 30px;
+  background: white;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  opacity: 1;
+  animation: mouse 2s infinite;
+}
+@keyframes mouse {
+  from{
+    opacity: 1;
+    top: 30px;
+  }
+  to{
+    opacity: 0;
+    top: 150px;
+  }
+}
