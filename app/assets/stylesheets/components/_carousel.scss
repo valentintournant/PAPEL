@@ -1,0 +1,15 @@
+.carousel-part {
+  margin-bottom: 30px;
+}
+
+@media(max-width: 992px) {
+  .carousel-part {
+    margin-bottom: 0;
+  }
+  }
+
+  @media(max-width: 768px) {
+  .carousel-part {
+    margin-bottom: 0;
+  }
+  }
