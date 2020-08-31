@@ -46,7 +46,7 @@ section .wave {
   left: 0;
   width: 100%;
   height: 100px;
-  background: url(wave-test.png);
+  background: url(wave-yo.png);
   background-size: 1000px 100px;
 }
 
@@ -89,7 +89,7 @@ section .wave.wave2 {
 section .wave.wave3 {
   animation: animate 30s linear infinite;
   z-index: 998;
-  opacity: 0.2;
+  opacity: 0.3;
   animation-delay: -2s;
   bottom: 15px;
 }
@@ -109,7 +109,7 @@ section .wave.wave4 {
 }
 
 .wave-background {
-  background: #EEF7FE;
+  background: #d1e9fc;
   height: calc(100vh - 173px);
   padding: 53px;
 }
