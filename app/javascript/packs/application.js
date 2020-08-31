@@ -29,6 +29,8 @@ import "chart.js";
 import Chart from 'chart.js';
 import { initDashboard } from '../plugins/dashboard';
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete'
+import { selectCategory } from '../plugins/select_category'
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -36,4 +38,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 document.addEventListener('turbolinks:load', () => {
   initDashboard()
   initMapbox();
+  selectCategory();
+  if (document.getElementById('receipt_address')) initAutocomplete();
 });

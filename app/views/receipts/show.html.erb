@@ -20,7 +20,12 @@
   </div>
 
   <div class="card-group">
-        <%= image_tag 'no-avatar.png', class:"card-group-avatar"%>
+
+    <% if current_user.avatar.attached? %>
+          <%= cl_image_tag current_user.avatar.key, height: 50, width: 50, crop: :fill, class: 'avatar dropdown-toggle', id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <% else %>
+          <%= cl_image_tag 'no-avatar.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <% end %>
     <div class="card-group-text">
         <p class="card-group-title"><strong>Holidays in Italy</strong></p>
 
