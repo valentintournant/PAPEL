@@ -28,12 +28,12 @@ import "chart.js";
 
 import Chart from 'chart.js';
 import { initDashboard } from '../plugins/dashboard';
+import { initMapbox } from '../plugins/init_mapbox';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
   initDashboard()
+  initMapbox();
 });

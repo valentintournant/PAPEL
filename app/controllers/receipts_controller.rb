@@ -1,7 +1,16 @@
 class ReceiptsController < ApplicationController
-  before_action :set_receipt, only: [:show, :edit, :update, :destroy]
+  before_action :set_receipt, only: [ :show, :edit, :update, :destroy ]
 
   def show
+    @receipt = Receipt.find(params[:id])
+    @markers = [@receipt].map do |receipt|
+      {
+        lat: receipt.latitude,
+        lng: receipt.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { receipt: receipt }),
+        image_url: helpers.asset_url('picto-papel.png')
+      }
+    end
   end
 
   def new
@@ -44,6 +53,6 @@ class ReceiptsController < ApplicationController
   end
 
   def receipt_params
-    params.require(:receipt).permit(:title, :date, :store, :amount, :description, :category_name, :user_id)
+    params.require(:receipt).permit(:title, :date, :store, :amount, :description, :category_name, :user_id, :address)
   end
 end
