@@ -19,25 +19,28 @@
     </div>
   </div>
 
-<div class="card-group">
-      <%= image_tag 'no-avatar.png', class:"card-group-avatar"%>
-  <div class="card-group-text">
-      <p class="card-group-title"><strong>Holidays in Italy</strong></p>
+  <div class="card-group">
+        <%= image_tag 'no-avatar.png', class:"card-group-avatar"%>
+    <div class="card-group-text">
+        <p class="card-group-title"><strong>Holidays in Italy</strong></p>
 
-      <div class="card-group-icon-edit">
-        <i class="fas fa-pen" style="font-size: 14px;"></i>
-      </div>
-      <div class="card-group-icon-delete">
-        <i class="fas fa-times" style="font-size: 14px;"></i>
-      </div>
-    <p class="card-group-name">Yohan F.</p>
+        <div class="card-group-icon-edit">
+          <i class="fas fa-pen" style="font-size: 14px;"></i>
+        </div>
+        <div class="card-group-icon-delete">
+          <i class="fas fa-times" style="font-size: 14px;"></i>
+        </div>
+      <p class="card-group-name">Yohan F.</p>
+    </div>
+
+      <p class="card-group-status highlighted highlighted-transport">Owner</p>
   </div>
 
-    <p class="card-group-status highlighted highlighted-transport">Owner</p>
+  <%= link_to 'Back to receipts', profile_path(current_user) %>
+
+  <div id="map" class="mt-2"
+     style="width: 100%; height: 350px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
-
-<%= link_to 'Back to receipts', profile_path(current_user) %>
-
-</div>
-
-
