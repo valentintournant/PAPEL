@@ -38,6 +38,7 @@
     padding: 0 24px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
         i {
           color: #F26766;
           opacity: 0.3;
@@ -186,13 +187,14 @@
       right: 10px;
     }
     .card-group-avatar {
-      width: 20%;
+      width: 60px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       box-shadow: 0 1px 2px rgba(0,0,0,0.2);
       margin-left: 10px;
     }
+
 }
 
 .card-user-x {
@@ -203,6 +205,10 @@
   display: flex;
   align-items: center;
   border-radius: 15px;
+
+  i{
+    height: 30px;
+  }
 
   h2 {
     font-size: 16px;
@@ -227,14 +233,16 @@
 
   .card-user-infos {
     padding: 16px;
+
   }
 }
 
 .stats-card {
   padding-top: 20px;
+  padding-bottom: 20px;
 
   .notification {
-    display: flexq;
+    display: flex;
   }
 }
 

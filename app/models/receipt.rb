@@ -19,4 +19,11 @@ class Receipt < ApplicationRecord
   validates :date, presence: true
   validates :amount, presence: true
   validates :category_name, inclusion: { in: AUTHORIZED_CATEGORIES }
+
+  include PgSearch::Model
+  pg_search_scope :search_by_store_and_description,
+    against: [:store, :description],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end

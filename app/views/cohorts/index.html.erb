@@ -4,34 +4,40 @@
     <i class= "highlighted highlighted-transport">Groups</i>
   </h1>
   <h2>Details</h2>
-    <%= pluralize @cohorts.size, "group" %>
+  <div class="d-flex">
+    <img class="mr-2 mt-2" style="height: 45px;" src="https://image.flaticon.com/icons/svg/476/476863.svg" alt="">
+    <h3 class="mt-3"> <%= @cohorts.size %> </h3>
+  </div>
   <div class="container card-line-header-x">
   </div>
-    <div class="btn-add">
-      <%= link_to "+", new_cohort_path %>
-    </div>
+
+  <div class="mt-3">
+    <%= link_to "Create a group", new_cohort_path, class: "btn-outline" %>
+  </div>
 
 <!-- Card(s) Show Groups -->
 <% @cohorts.each do |cohort| %>
-  <div class="card-group mb-5">
-    <%= cl_image_tag cohort.owner.avatar.key, height: 50, width: 50, crop: :fill, class:"card-group-avatar"%>
-    <div class="card-group-text d-flex">
-        <p class="card-group-title"><strong><%= link_to cohort.title, cohort_path(cohort) %></strong></p>
+  <%= link_to cohort_path(cohort) do %>
+    <div class="card-group mb-3">
+      <%= cl_image_tag cohort.owner.avatar.key, height:60, width: 50, crop: :fill, class:"card-group-avatar"%>
+      <div class="card-group-text d-flex">
+          <p class="card-group-title"><strong><%=  cohort.title %></strong></p>
 
-        <div class="card-group-icon-edit">
-          <%= link_to edit_cohort_path(cohort), method: :get do %>
-          <i class="fas fa-pen" style="font-size: 14px;"></i>
-          <% end %>
-        </div>
-        <div class="card-group-icon-delete">
-          <%= link_to cohort_path(cohort), method: :delete, data: { confirm: "Are you sure?" } do %>
-          <i class="fas fa-times" style="font-size: 14px;"></i>
-          <% end %>
-        </div>
-        <p class="card-group-name"><%= cohort.owner.name %></p>
+          <div class="card-group-icon-edit">
+            <%= link_to edit_cohort_path(cohort), method: :get do %>
+            <i class="fas fa-pen" style="font-size: 14px;"></i>
+            <% end %>
+          </div>
+          <div class="card-group-icon-delete">
+            <%= link_to cohort_path(cohort), method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fas fa-times" style="font-size: 14px;"></i>
+            <% end %>
+          </div>
+          <p class="card-group-name"><%= cohort.owner.name.capitalize %></p>
+      </div>
     </div>
-  </div>
-<% end %>
+    <% end %>
+  <% end %>
 </div>
 
 

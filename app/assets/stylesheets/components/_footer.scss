@@ -28,6 +28,7 @@
 
 .footer-phone {
   display: none;
+  z-index: 1000;
   border-top: 1px solid #c4c4c4;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -81,5 +82,11 @@
   .footer-phone {
     display: flex;
   }
+}
+
+@media(min-width: 992px) {
+  body {
+    margin-bottom: 0 !important;
+ }
 }
 
