@@ -1,4 +1,7 @@
 class Receipt < ApplicationRecord
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   CATEGORIES = {
     'shopping'          => 'Shopping',
     'restaurant'        => 'Restaurant',
@@ -16,4 +19,11 @@ class Receipt < ApplicationRecord
   validates :date, presence: true
   validates :amount, presence: true
   validates :category_name, inclusion: { in: AUTHORIZED_CATEGORIES }
+
+  include PgSearch::Model
+  pg_search_scope :search_by_store_and_description,
+    against: [:store, :description],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end

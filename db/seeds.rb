@@ -78,6 +78,7 @@ receipt_1 = Receipt.create!(
   description: "Lunch at Le Wagon",
   category_name: "restaurant",
   user_id: user_1.id,
+  address: "166 Bis Avenue de Bretagne, 59000 Lille",
 )
 
 receipt_2 = Receipt.create!(
@@ -87,6 +88,7 @@ receipt_2 = Receipt.create!(
   description: "Lunch at Le Wagon",
   category_name: "restaurant",
   user_id: user_1.id,
+  address: "5 Rue Saint-Jacques, 59800 Lille",
 )
 
 receipt_3 = Receipt.create!(
@@ -96,6 +98,7 @@ receipt_3 = Receipt.create!(
   description: "Food shopping for this two weeks",
   category_name: "food_and_beverage",
   user_id: user_1.id,
+  address: "14 Place Nouvelle Aventure, 59000 Lille",
 )
 
 receipt_4 = Receipt.create!(
@@ -105,6 +108,7 @@ receipt_4 = Receipt.create!(
   description: "New bike",
   category_name: "shopping",
   user_id: user_1.id,
+  address: "2 Rue des Tanneurs, 59000 Lille",
 )
 
 receipt_5 = Receipt.create!(
@@ -114,6 +118,7 @@ receipt_5 = Receipt.create!(
   description: "Afterwork",
   category_name: "entertainment",
   user_id: user_1.id,
+  address: "Z.A du Grand But, 8 Rue du Château d'Isenghien, 59160",
 )
 
 receipt_6 = Receipt.create!(
@@ -123,6 +128,7 @@ receipt_6 = Receipt.create!(
   description: "Weekend in Milan",
   category_name: "transport",
   user_id: user_1.id,
+  address: "Rue de la Gare Lomme, 59160 Lomme",
 )
 
 receipt_7 = Receipt.create!(
@@ -132,6 +138,7 @@ receipt_7 = Receipt.create!(
   description: "shopping for the year",
   category_name: "shopping",
   user_id: user_1.id,
+  address: "31 Rue du Faubourg de Béthune, 59000 Lille",
 )
 
 receipt_8 = Receipt.create!(
@@ -141,6 +148,7 @@ receipt_8 = Receipt.create!(
   description: "Costume for jules birthday",
   category_name: "others",
   user_id: user_1.id,
+  address: "139 Rue Léon Gambetta, 59000 Lille",
 )
 
 receipt_9 = Receipt.create!(
@@ -150,6 +158,7 @@ receipt_9 = Receipt.create!(
   description: "Gin for tonight",
   category_name: "food_and_beverage",
   user_id: user_1.id,
+  address: "59 Avenue de la République, 59160 Lille",
 )
 
 receipt_10 = Receipt.create!(
@@ -159,6 +168,7 @@ receipt_10 = Receipt.create!(
   description: "Weekend in Greece",
   category_name: "transport",
   user_id: user_1.id,
+  address: "1 rue Royale, 59000 Lille",
 )
 
 receipt_11 = Receipt.create!(
@@ -168,6 +178,7 @@ receipt_11 = Receipt.create!(
   description: "Tenet",
   category_name: "entertainment",
   user_id: user_1.id,
+  address: "40 Rue de Béthune, 59800 Lille",
 )
 
 receipt_12 = Receipt.create!(
@@ -177,6 +188,7 @@ receipt_12 = Receipt.create!(
   description: "Toothpaste tabs",
   category_name: "shopping",
   user_id: user_1.id,
+  address: "52 rue d'Angleterre, 59000 Lille",
 )
 receipt_13 = Receipt.create!(
   date: "2020 july 23",
@@ -185,6 +197,7 @@ receipt_13 = Receipt.create!(
   description: "Lunch at Le Wagon",
   category_name: "restaurant",
   user_id: user_4.id,
+  address: "166 Bis Avenue de Bretagne, 59000 Lille",
 )
 
 receipt_14 = Receipt.create!(
@@ -194,6 +207,7 @@ receipt_14 = Receipt.create!(
   description: "Lunch at Le Wagon",
   category_name: "restaurant",
   user_id: user_4.id,
+  address: "5 Rue Saint-Jacques, 59800 Lille",
 )
 
 receipt_15 = Receipt.create!(
@@ -203,6 +217,7 @@ receipt_15 = Receipt.create!(
   description: "Food shopping for this two weeks",
   category_name: "food_and_beverage",
   user_id: user_4.id,
+  address: "14 Place Nouvelle Aventure, 59000 Lille",
 )
 
 receipt_16 = Receipt.create!(
@@ -212,6 +227,7 @@ receipt_16 = Receipt.create!(
   description: "New bike",
   category_name: "shopping",
   user_id: user_4.id,
+  address: "2 Rue des Tanneurs, 59000 Lille",
 )
 
 receipt_17 = Receipt.create!(
@@ -221,6 +237,7 @@ receipt_17 = Receipt.create!(
   description: "Afterwork",
   category_name: "entertainment",
   user_id: user_4.id,
+  address: "Z.A du Grand But, 8 Rue du Château d'Isenghien, 59160",
 )
 
 receipt_18 = Receipt.create!(
@@ -230,6 +247,7 @@ receipt_18 = Receipt.create!(
   description: "Weekend in Milan",
   category_name: "transport",
   user_id: user_4.id,
+  address: "Rue de la Gare Lomme, 59160 Lomme",
 )
 
 receipt_19 = Receipt.create!(
@@ -239,6 +257,7 @@ receipt_19 = Receipt.create!(
   description: "shopping for the year",
   category_name: "shopping",
   user_id: user_4.id,
+  address: "31 Rue du Faubourg de Béthune, 59000 Lille",
 )
 
 receipt_20 = Receipt.create!(
@@ -248,6 +267,7 @@ receipt_20 = Receipt.create!(
   description: "Costume for jules birthday",
   category_name: "others",
   user_id: user_4.id,
+  address: "139 Rue Léon Gambetta, 59000 Lille",
 )
 
 receipt_21 = Receipt.create!(
@@ -257,6 +277,7 @@ receipt_21 = Receipt.create!(
   description: "Gin for tonight",
   category_name: "food_and_beverage",
   user_id: user_4.id,
+  address: "59 Avenue de la République, 59160 Lille",
 )
 
 receipt_22 = Receipt.create!(
@@ -266,6 +287,7 @@ receipt_22 = Receipt.create!(
   description: "Weekend in Greece",
   category_name: "transport",
   user_id: user_4.id,
+  address: "1 rue Royale, 59000 Lille",
 )
 
 receipt_23 = Receipt.create!(
@@ -275,6 +297,7 @@ receipt_23 = Receipt.create!(
   description: "Tenet",
   category_name: "entertainment",
   user_id: user_4.id,
+  address: "40 Rue de Béthune, 59800 Lille",
 )
 
 receipt_24 = Receipt.create!(
@@ -284,4 +307,5 @@ receipt_24 = Receipt.create!(
   description: "Toothpaste tabs",
   category_name: "shopping",
   user_id: user_4.id,
+  address: "52 rue d'Angleterre, 59000 Lille",
 )

@@ -6,6 +6,10 @@ class ProfilesController < ApplicationController
     else
       @receipts = current_user.receipts
     end
+
+    if params[:query].present?
+      @receipts = @receipts.search_by_store_and_description(params[:query])
+    end
   end
 
   def stats
