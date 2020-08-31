@@ -205,6 +205,10 @@
   align-items: center;
   border-radius: 15px;
 
+  img {
+    height: 40px;
+  }
+
   h2 {
     font-size: 16px;
     font-weight: bold;
@@ -228,6 +232,7 @@
 
   .card-user-infos {
     padding: 16px;
+
   }
 }
 
