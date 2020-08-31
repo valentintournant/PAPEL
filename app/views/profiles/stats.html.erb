@@ -1,19 +1,20 @@
-<div class="container">
-  <h1>My
-  <i class="highlighted highlighted-shopping">Expenses</i>
 
-  </h1>
-
-  <p> You spent: <%=@user_expense %> € </p>
+<div class="container mt-4">
+  <h1 class="mt-4"> My<i class="highlighted highlighted-transport">Expenses</i></h1>
+  <div class="d-flex flex-column align-items-center mt-4">
+    <h4> You spent 🤑</h4>
+    <span><h4><i class="highlighted highlighted-food mb-4"> <strong><%=@user_expense %>€</strong> </i></span></h4>
+  </div>
 </div>
 
+<!-- Chart -->
 <canvas id="myChart"
         data-labels="<%= @labels.to_json %>",
         data-percentages="<%= @percentages.to_json %>">
 </canvas>
 
+<!-- List receipts -->
 <div class="container">
-
   <div class="stats-card">
     <% Receipt::CATEGORIES.each do |key, value| %>
       <% unless @user.total_receipts_per_category(key) == 0 %>
@@ -27,6 +28,9 @@
                 <p><small><%= value %></small></p>
                 <p><strong><%= @user.total_receipts_per_category(key) %> €</strong></p>
               </div>
+              <div>
+                <p><strong><%=(@user.total_receipts_per_category(key).fdiv(@user_expense) * 100).to_i %> %</strong></p>
+            </div>
             </div>
           </div>
         <% end %>

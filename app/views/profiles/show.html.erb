@@ -1,7 +1,6 @@
 <div class="container">
-  <h1 class="mt-4"> My
-  <i class="highlighted highlighted-transport">PapeL</i>
- </h1>
+  <h1 class="mt-4"> My<i class="highlighted highlighted-transport">PapeL</i></h1>
+
 
   <div class="card-user-x mt-5">
     <div class="left-content p-4 mb-1 mt-2">
@@ -45,8 +44,8 @@
           <div class="category-icon"> <%= image_tag icon_name %></div>
           <div class="card-list-content">
             <div>
-              <p><small><%=  receipt.date.strftime('%A, %b %d') %></small></p>
-              <p><strong><%=  receipt.store  %></strong></p>
+              <p><small><%= receipt.date.strftime('%A, %b %d') %></small></p>
+              <p><strong><%= receipt.store %></strong></p>
             </div>
             <div>
               <p class=" ml-3"><strong><%= receipt.amount %>€</strong></p>
