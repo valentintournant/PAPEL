@@ -5,20 +5,54 @@
     <h3> <%= @cohort.owner.name.capitalize %> </h3>
     <p class="owner-tag ml-3 mt-1">Owner</p>
   </div>
-    <div class="avatar p-3 d-flex">
+    <div class="avatar d-flex">
       <% @cohort.members.first(4).each do |member| %>
-        <%= cl_image_tag member.user.avatar.key, height: 50, width: 50, crop: :fill, class: 'avatar-large' %>
+      <div class="mr-4">
+        <%= cl_image_tag member.user.avatar.key, height: 60, width: 60, crop: :fill, class: 'avatar-large' %>
+      </div>
       <% end %>
     </div>
-    <div class="card-line-header-x"> </div>
+    <div class="mt-5 card-line-header-x"> </div>
   <div class="mt-3">
-    <%= simple_form_for [@cohort, @member] do |f| %>
-    <%= f.input :user_id, collection: @users %>
-  <div class="d-none">
-    <%= f.input :status, input_html: { value: 'participant' } %>
-  </div>
-    <%= f.submit "Ajouter un membre", class: 'btn-main mb-5' %>
-    <% end %>
-    <%= link_to "Add a receipt",  new_receipt_path, class: "btn-main" %>
+      <%= simple_form_for [@cohort, @member] do |f| %>
+      <%= f.input :user_id, collection: @users %>
+    <div class="d-none">
+        <%= f.input :status, input_html: { value: 'participant' } %>
+    </div>
+        <%= f.submit "Ajouter un membre", class: 'btn-outline mb-3' %>
+        <% end %>
+
+    <div class="cohort-receipts  mb-5">
+      <% @cohort.receipts.each do |receipt| %>
+        <% icon_name = "ic-#{receipt.category_name}.png" %>
+        <%= link_to receipt_path(receipt) do %>
+          <div class="card-list-ticket mt-3">
+            <div class="category-icon"> <%= image_tag icon_name %></div>
+            <div class="card-list-content">
+              <div>
+                <p><small><%= receipt.date.strftime('%A, %b %d') %></small></p>
+                <p><strong><%= receipt.store %></strong></p>
+              </div>
+              <div>
+                <p class=" ml-3"><strong><%= receipt.amount %>€</strong></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+
+
+
+
+
+
+      <div class="ml-5 p-5">
+        <%= link_to "Share a receipt",  new_receipt_path(cohort_id: params[:id]), class: "btn-main"%>
+      </div>
   </div>
 </div>
+
+  <div class="btn-outline-m"> <%= link_to 'Back to my groups', cohorts_path(current_user) %></div>
+

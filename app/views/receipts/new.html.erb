@@ -19,6 +19,8 @@
 
           <!-- TODO: (9) pre-remplir le formulaire avec les params récupérés -->
         <%= simple_form_for @receipt do |f| %>
+          <input type="hidden" name="cohort_id" value="<%= params[:cohort_id] %>">
+
           <div class="row">
             <div class="col-6">
               <%= f.input :store, placeholder: "Auchan" %>
@@ -28,14 +30,24 @@
             </div>
             <div class="col-12">
               <%= f.input :description, placeholder: "Food shopping for the week.."  %>
-              <%= f.input :date %>
-              <%= f.input :address, placeholder: "52 rue d'Angleterre 59000 Lille" %>
+            </div>
 
+            <div class="col-12">
+              <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+            </div>
+                         
+            <div class="col-12">
+              <%= f.input :address, placeholder: "52 rue d'Angleterre 59000 Lille" %>
+            </div>
+
+
+            <div class="col-12">
               <!-- checkboxes -->
 
               <div class="form-group">
                 <label class="control-label check_boxes optional">Categories</label>
                 <input class="form-control hidden" type="hidden" name="scan" id="receipt_amount", value="false">
+
                 <input type="hidden" name="receipt[category_name]" value="" id="category_value">
                 <div class="category-choices">
                   <% Receipt::CATEGORIES.each do |key, category| %>
@@ -47,7 +59,9 @@
                   <% end %>
                  </div>
               </div>
-              <%= f.submit :submit, class: ' btn-main btn-sm ml-2 mt-2 mb-4' %>
+            </div>
+            <div class="col-12">
+              <%= f.button_button t(".submit"), name: "Submit", class: ' btn-main ml-2 mt-2 mb-4' %>
             </div>
           </div>
         <% end %>
@@ -55,4 +69,3 @@
     </div>
   </div>
 </div>
-

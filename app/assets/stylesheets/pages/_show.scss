@@ -40,3 +40,35 @@
 .notification .notification-actions a:hover {
   color: #555555;
 }
+
+.btn-my-groups {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search {
+  position: relative;
+  .btn-main {
+    position: absolute;
+    background: transparent!important;
+    top: 0;
+    right: 0;
+    height: 100%;
+  i {
+    color: #6C757D;
+  }
+  }
+}
+
+.container-y {
+  width: 200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+#map {
+  margin-bottom: 20px;
+}
+
