@@ -1,5 +1,7 @@
 
 <%= simple_form_for @receipt do |f| %>
+
+  <input type="text" name="cohort_id" value="<%= params[:cohort_id] %>">
   <div class="row">
     <div class="col-6">
       <%= f.input :store, placeholder: "Auchan" %>
