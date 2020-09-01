@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="mt-4"> My<i class="highlighted highlighted-transport">PapeL</i></h1>
+  <h1 class="mt-4 d-flex justify-content-center"> My<i class="highlighted highlighted-transport">PapeL</i></h1>
 
 
   <div class="card-user-x mt-5">
@@ -42,14 +42,24 @@
 
   <div class="mt-2 mb-5">
     <% @receipts.each do |receipt| %>
+
       <% icon_name = "ic-#{receipt.category_name}.png" %>
       <%= link_to receipt_path(receipt) do %>
-        <div class="card-list-ticket mt-3 ">
-          <div class="category-icon"> <%= image_tag icon_name %></div>
+
+
+        <div class="card-list-ticket mt-3">
+          <% if receipt.category_name %>
+            <div class="category-icon"> <%= image_tag icon_name %></div>
+          <% end %>
+
           <div class="card-list-content">
             <div>
-              <p><small><%= receipt.date.strftime('%A, %b %d') %></small></p>
+              <% if receipt.date %>
+                <p><small><%= receipt.date.strftime('%A, %b %d') %></small></p>
+              <% end %>
+              <% if receipt.store %>
               <p><strong><%= receipt.store %></strong></p>
+              <% end %>
             </div>
             <div>
               <p class=" ml-3"><strong><%= receipt.amount %>€</strong></p>
