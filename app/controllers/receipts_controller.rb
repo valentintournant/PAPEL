@@ -84,7 +84,8 @@ class ReceiptsController < ApplicationController
     return false if params['scan'] == 'true'
 
     if @receipt.save
-      redirect_to cohort_path(@cohort) if @receipt.cohort
+      return redirect_to cohort_path(@cohort) if @receipt.cohort
+
       redirect_to receipt_path(@receipt), notice: 'Receipt was successfully created.'
     else
       render :new
