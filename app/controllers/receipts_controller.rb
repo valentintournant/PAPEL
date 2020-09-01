@@ -33,13 +33,18 @@ class ReceiptsController < ApplicationController
   end
 
   def create
+    @cohort = Cohort.find(params[:cohort_id]) if params[:cohort_id].present?
     @receipt = Receipt.new(receipt_params)
-
+    @receipt.cohort = @cohort
     @receipt.user = current_user
     if @receipt.save
-      redirect_to receipt_path(@receipt), notice: 'Receipt was successfully created.'
+      # changer la redirection si cohort
+      if params[:cohort_id].present?
+        redirect_to cohort_path(@cohort)
+      else
+        redirect_to receipt_path(@receipt), notice: 'Receipt was successfully created.'
+      end
     else
-      raise
       render :new
     end
   end
@@ -70,6 +75,6 @@ class ReceiptsController < ApplicationController
   end
 
   def receipt_params
-    params.require(:receipt).permit(:title, :date, :store, :amount, :description, :category_name, :user_id, :address, :photo)
+    params.require(:receipt).permit(:title, :date, :store, :amount, :description, :category_name, :user_id, :address, :photo, :cohort_id)
   end
 end

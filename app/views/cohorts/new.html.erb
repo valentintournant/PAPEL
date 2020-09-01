@@ -2,13 +2,14 @@
   <div class="row justify-content-center">
     <div class="col-12 col-lg-8">
       <div class="card-form-y p-4">
-        <h2 class="title"> Create a group </h2>
+        <h2 class="title"> Create <i class="highlighted highlighted-transport"> a group </i></h2>
           <%= render 'form', cohort: @cohort %>
         <div class="mt-4">
-          <%= link_to "Back to groups", cohorts_path, class: "btn-main"  %>
-          <%= link_to "Back to menu", root_path, class: "btn-main"  %>
+          <%= link_to "Back to groups", cohorts_path, class: "btn-outline"  %>
+
         </div>
-      </div>
     </div>
+    <%= link_to "Back to menu", root_path, class: "btn-outline ml-4"  %>
+      </div>
   </div>
 </div>

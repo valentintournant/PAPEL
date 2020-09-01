@@ -4,6 +4,7 @@
       <div class="form-post">
         <h1>New receipt</h1>
 
+
         <!-- TODO: (1)
               - ajouter un formulaire d'upload d'image
               - rediriger vers l'action read_receipt
@@ -14,6 +15,7 @@
 
 
           <%= simple_form_for @receipt do |f| %>
+            <input type="hidden" name="cohort_id" value="<%= params[:cohort_id] %>">
             <div class="row">
               <div class="col-6">
                 <%= f.input :store, placeholder: "Auchan" %>
@@ -45,7 +47,7 @@
               </div>
             </div>
           <% end %>
-      </div>
+       </div>
     </div>
   </div>
 </div>
