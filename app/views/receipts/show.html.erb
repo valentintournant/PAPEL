@@ -1,51 +1,34 @@
 <div class="container">
+  <div class="d-flex justify-content-center mt-2">
+    <h1>Your
+      <i class="highlighted highlighted-vacation mt-2">receipt</i>
+    </h1>
+  </div>
   <div class="card-ticket">
     <div class="card-ticket-text">
-      <h3> <%= @receipt.store %> </h3>
+      <h3 id="ticket-title"> <%= @receipt.store %> </h3>
       <p id="card-ticket-date"> <%= @receipt.date.strftime('%A, %b %d') %> </p>
       <p id="card-ticket-desc"> <%= @receipt.description %></p>
     </div>
 
-    <p> <%= Receipt::CATEGORIES[@receipt.category_name] %> </p>
     <p id="amount"> <%= @receipt.amount %>€</p>
 
     <div class="card-ticket-icons">
       <%= link_to edit_receipt_path(@receipt) do %>
-        <i class="fas fa-pen" style="font-size: 14px;"></i>
+        <i class="fas fa-pen" style="font-size: 17px;"></i>
         <% end %>
       <%= link_to receipt_path(@receipt),method: :delete, data: { confirm: "Are you sure?" } do %>
-        <i class=" link far fa-trash-alt" style="font-size: 14px;"></i>
+        <i class=" link far fa-trash-alt" style="font-size: 17px;"></i>
       <% end  %>
     </div>
   </div>
-
-  <div class="card-group">
-
-    <% if current_user.avatar.attached? %>
-          <%= cl_image_tag current_user.avatar.key, height: 50, width: 50, crop: :fill, class: 'avatar dropdown-toggle', id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% else %>
-          <%= cl_image_tag 'no-avatar.png', class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <% end %>
-    <div class="card-group-text">
-        <p class="card-group-title"><strong>Holidays in Italy</strong></p>
-
-        <div class="card-group-icon-edit">
-          <i class="fas fa-pen" style="font-size: 14px;"></i>
-        </div>
-        <div class="card-group-icon-delete">
-          <i class="fas fa-times" style="font-size: 14px;"></i>
-        </div>
-      <p class="card-group-name">Yohan F.</p>
-    </div>
-
-      <p class="card-group-status highlighted highlighted-transport">Owner</p>
-  </div>
-
-  <%= link_to 'Back to receipts', profile_path(current_user) %>
 
   <div id="map" class="mt-2"
      style="width: 100%; height: 350px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+</div>
+<div class="container-y">
+  <div class="btn-outline" style="margin: 4px 4px 0px 0px;"> <%= link_to 'Back to receipts', profile_path(current_user) %></div>
 </div>

@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import "chart.js";
+import "../plugins/flatpickr";
 
 import Chart from 'chart.js';
 import { initDashboard } from '../plugins/dashboard';
@@ -38,6 +39,7 @@ import { selectCategory } from '../plugins/select_category'
 document.addEventListener('turbolinks:load', () => {
   initDashboard()
   initMapbox();
+  flatpick();
   selectCategory();
   if (document.getElementById('receipt_address')) initAutocomplete();
 });

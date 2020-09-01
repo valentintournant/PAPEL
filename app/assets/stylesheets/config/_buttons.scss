@@ -18,6 +18,18 @@
   padding: 8px 24px;
   border-radius: 50px;
   border: 2px solid #F26766;
+    a {
+      color: #F26766;
+    }
+}
+
+.btn-outline-m {
+  color: #F26766;
+  padding: 8px 24px;
+  border-radius: 50px;
+    a {
+      color: #F26766;
+    }
 }
 
 .btn-outline:hover {
@@ -28,6 +40,4 @@
 
 .btn-add {
   margin-top: 10px;
-
-
 }
