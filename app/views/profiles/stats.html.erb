@@ -25,11 +25,11 @@
             <div class="card-list-content">
               <div>
                 <% (@user.total_receipts_per_category(key).fdiv(@user_expense) * 100).to_i %>
-                <p><small><%= value %></small></p>
+                <h5><small><%= value.split(" ").first %></small></h5>
                 <p><strong><%= @user.total_receipts_per_category(key) %> €</strong></p>
               </div>
               <div>
-                <p><strong><%=(@user.total_receipts_per_category(key).fdiv(@user_expense) * 100).to_i %> %</strong></p>
+                <h5><strong><%=(@user.total_receipts_per_category(key).fdiv(@user_expense) * 100).to_i %> %</strong></h5>
             </div>
             </div>
           </div>
