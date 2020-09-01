@@ -35,11 +35,13 @@
         <%= link_to category_list_receipts_path do %>
         <i class="fas fa-search"></i>
         <% end %>
-        <%= link_to new_receipt_path do %>
-       <div class="btn-plus-icon"><i class="fas fa-plus"></i></div>
-       <% end %>
+        <div data-turbolinks = "false">
+          <%= link_to new_receipt_path do %>
+            <div class="btn-plus-icon"><i class="fas fa-plus"></i></div>
+          <% end %>
+        </div>
         <%= link_to stats_profiles_path do %>
-        <i class="fas fa-chart-pie"></i>
+          <i class="fas fa-chart-pie"></i>
         <% end %>
         <% if current_user %>
         <%= link_to profile_path(current_user) do %>

@@ -39,6 +39,7 @@ import { selectCategory } from '../plugins/select_category'
 document.addEventListener('turbolinks:load', () => {
   initDashboard()
   initMapbox();
+  flatpick();
   selectCategory();
   if (document.getElementById('receipt_address')) initAutocomplete();
 });
