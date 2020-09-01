@@ -31,29 +31,16 @@ class ReceiptsController < ApplicationController
 
   def create
     @receipt = Receipt.new(receipt_params)
-    
+
     # associate cohort to the receipt if there is a cohort
     @cohort = Cohort.find(params[:cohort_id]) if params[:cohort_id].present?
     @receipt.cohort = @cohort
-   
+
     @receipt.user = current_user
 
-    # Receipt added with scan
-    if params['scan'] == 'true'
-      if @receipt.save(validate: false)
-        redirect_to read_receipt_path(@receipt), notice: 'Photo was successfully analyse.'
-      else
-        render :new
-      end
-    end
-   
-     # Receipt manually added
-    if @receipt.save
-      redirect_to cohort_path(@cohort) if @receipt.cohort
-      redirect_to receipt_path(@receipt), notice: 'Receipt was successfully created.'
-     else
-       render :new
-     end
+    create_receipt_with_scan
+
+    create_receipt_manually
   end
 
   def edit
@@ -82,6 +69,27 @@ class ReceiptsController < ApplicationController
   end
 
   private
+
+  def create_receipt_with_scan
+    return false if params['scan'] != 'true'
+
+    if @receipt.save(validate: false)
+      redirect_to read_receipt_path(@receipt), notice: 'Photo was successfully analyse.'
+    else
+      render :new
+    end
+  end
+
+  def create_receipt_manually
+    return false if params['scan'] == 'true'
+
+    if @receipt.save
+      redirect_to cohort_path(@cohort) if @receipt.cohort
+      redirect_to receipt_path(@receipt), notice: 'Receipt was successfully created.'
+    else
+      render :new
+    end
+  end
 
   def set_receipt
     @receipt = Receipt.find(params[:id])
