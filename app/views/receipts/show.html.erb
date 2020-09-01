@@ -1,20 +1,24 @@
 <div class="container">
+  <div class="d-flex justify-content-center mt-2">
+    <h1>Your
+      <i class="highlighted highlighted-vacation mt-2">receipt</i>
+    </h1>
+  </div>
   <div class="card-ticket">
     <div class="card-ticket-text">
-      <h3> <%= @receipt.store %> </h3>
+      <h3 id="ticket-title"> <%= @receipt.store %> </h3>
       <p id="card-ticket-date"> <%= @receipt.date.strftime('%A, %b %d') %> </p>
       <p id="card-ticket-desc"> <%= @receipt.description %></p>
     </div>
 
-    <p> <%= Receipt::CATEGORIES[@receipt.category_name] %> </p>
     <p id="amount"> <%= @receipt.amount %>€</p>
 
     <div class="card-ticket-icons">
       <%= link_to edit_receipt_path(@receipt) do %>
-        <i class="fas fa-pen" style="font-size: 14px;"></i>
+        <i class="fas fa-pen" style="font-size: 17px;"></i>
         <% end %>
       <%= link_to receipt_path(@receipt),method: :delete, data: { confirm: "Are you sure?" } do %>
-        <i class=" link far fa-trash-alt" style="font-size: 14px;"></i>
+        <i class=" link far fa-trash-alt" style="font-size: 17px;"></i>
       <% end  %>
     </div>
   </div>
@@ -25,4 +29,6 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
-<div class="btn-outline-m" style="margin: 4px 4px 0px 0px;"> <%= link_to 'Back to receipts', profile_path(current_user) %></div>
+<div class="container-y">
+  <div class="btn-outline" style="margin: 4px 4px 0px 0px;"> <%= link_to 'Back to receipts', profile_path(current_user) %></div>
+</div>

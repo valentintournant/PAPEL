@@ -1,8 +1,9 @@
 <div class="container">
-  <h1>Your
-    <i class="highlighted highlighted-vacation mt-2">categories</i>
-  </h1>
-
+  <div class="d-flex justify-content-center mt-2">
+    <h1>Your
+      <i class="highlighted highlighted-vacation mt-2">categories</i>
+    </h1>
+  </div>
   <div class="search mt-4" id="search-form">
     <%= form_tag profile_path(current_user), method: :get, id: 'search-form' do %>
     <%= text_field_tag :query,
