@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     collection do
       get :category_list
     end
+    member do
+      get 'read', to: 'receipts#read'
+    end
   end
   # receipts-belong-group
 
