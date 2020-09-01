@@ -40,3 +40,19 @@
 .notification .notification-actions a:hover {
   color: #555555;
 }
+
+.btn-my-groups {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search {
+  position: relative;
+  .btn-main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+}
