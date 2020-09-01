@@ -141,9 +141,6 @@
       top: 10px;
     }
     .card-group-icon-edit {
-      position: absolute;
-      left: 130px;
-      top: 0px;
         i {
           color: #F26766;
           transition-duration: 0.2s;
@@ -159,7 +156,7 @@
 
     .card-group-icon-delete {
       position: absolute;
-      right: -105px;
+      left: 220px;
       bottom: 20px;
         i {
           color: #99A7B0;
