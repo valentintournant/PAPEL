@@ -1,7 +1,7 @@
 
 <%= simple_form_for @receipt do |f| %>
 
-  <input type="text" name="cohort_id" value="<%= params[:cohort_id] %>">
+  <input type="hidden" name="cohort_id" value="<%= params[:cohort_id] %>">
   <div class="row">
     <input type="hidden" name="cohort_id" value="<%= params[:cohort_id] %>">
     <div class="col-6">
