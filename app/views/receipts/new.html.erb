@@ -3,12 +3,14 @@
     <div class="col-12">
       <div class="form-post">
         <h1>New receipt</h1>
+
         <!-- TODO: (1)
               - ajouter un formulaire d'upload d'image
               - rediriger vers l'action read_receipt
         -->
         <!-- TODO: (9) pre-remplir le formulaire avec les params récupérés -->
         <%= simple_form_for @receipt do |f| %>
+          <input type="hidden" name="cohort_id" value="<%= params[:cohort_id] %>">
           <div class="row">
             <div class="col-6">
               <%= f.input :store, placeholder: "Auchan" %>
@@ -23,10 +25,11 @@
             <div class="col-12">
               <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
             </div>
-
+                         
             <div class="col-12">
               <%= f.input :address, placeholder: "52 rue d'Angleterre 59000 Lille" %>
             </div>
+
 
             <div class="col-12">
               <!-- checkboxes -->
