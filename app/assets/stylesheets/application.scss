@@ -11,6 +11,7 @@
 @import "font-awesome";
 @import 'mapbox-gl/dist/mapbox-gl';
 @import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder';
+@import "flatpickr/dist/themes/airbnb";
 
 // Your CSS partials
 @import "components/index";
@@ -18,7 +19,6 @@
 @import "pages/show";
 @import "pages/show_profile";
 @import "pages/cohort";
-@import "flatpickr/dist/themes/airbnb";
 
 body {
   margin-bottom: 71px; // for the fixed bottom navbar
