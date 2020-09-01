@@ -1,12 +1,44 @@
-<%= simple_form_for(@receipt) do |f| %>
-  <%= f.input :store %>
-  <%= f.input :date %>
-  <%= f.input :amount %>
-  <%= f.input :description %>
-  <%= f.input :address %>
-  <%= f.input :category_name, collection: ['shopping', 'restaurant', 'food_and_beverage', 'entertainment', 'transport', 'others'] %>
-  <%= image_tag @receipt.photo %>
 
-  <%= f.submit :submit, class: ' btn-main btn-sm ml-2 mt-2 mb-4' %>
+<%= simple_form_for @receipt do |f| %>
+  <div class="row">
+    <div class="col-6">
+      <%= f.input :store, placeholder: "Auchan" %>
+    </div>
+    <div class="col-6">
+      <%= f.input :amount, placeholder: "300"  %>
+    </div>
+    <div class="col-12">
+      <%= f.input :description, placeholder: "Food shopping for the week.."  %>
+    </div>
 
+    <div class="col-12">
+      <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+    </div>
+
+
+    <div class="col-12">
+      <%= f.input :address, placeholder: "52 rue d'Angleterre 59000 Lille" %>
+    </div>
+
+    <div class="col-12">
+      <!-- checkboxes -->
+
+      <div class="form-group">
+        <label class="control-label check_boxes optional">Categories</label>
+        <input type="hidden" name="receipt[category_name]" value="" id="category_value">
+        <div class="category-choices">
+          <% Receipt::CATEGORIES.each do |key, category| %>
+            <input type="checkbox" class="checkbox" value="<%= category %>"  name="receipt[category_name]" id="<%= category %>">
+            <label for="<%= key %>">
+              <!-- <i class="fa fa-check"></i> -->
+              <%= category %>
+            </label>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <%= f.button_button t(".submit"), name: "Submit", class: ' btn-main ml-2 mt-2 mb-4' %>
+    </div>
+  </div>
 <% end %>
