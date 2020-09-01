@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import "chart.js";
+import "../plugins/flatpickr";
 
 import Chart from 'chart.js';
 import { initDashboard } from '../plugins/dashboard';
