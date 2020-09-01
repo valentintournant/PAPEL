@@ -40,11 +40,11 @@
     <% end %>
   </div>
 
-  <div class="mt-5">
+  <div class="mt-2 mb-5">
     <% @receipts.each do |receipt| %>
       <% icon_name = "ic-#{receipt.category_name}.png" %>
       <%= link_to receipt_path(receipt) do %>
-        <div class="card-list-ticket mt-3">
+        <div class="card-list-ticket mt-3 ">
           <div class="category-icon"> <%= image_tag icon_name %></div>
           <div class="card-list-content">
             <div>
