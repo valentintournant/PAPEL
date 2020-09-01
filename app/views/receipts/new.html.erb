@@ -1,50 +1,56 @@
-<div class="container">
+<!-- Scan or add  a ticket -->
+<div class="container mt-4 mb-4">
   <div class="row">
     <div class="col-12">
       <div class="form-post">
-        <h1>New receipt</h1>
+        <div class="text-center"><h1>New receipt</h1></div>
+        <div class="card-line-header-x mb-4"></div>
+        <h4><i class="highlighted highlighted-transport mb-2">Scan my receipt 🤩</i></h4>
+          <!-- Scan Image form -->
+        <%= simple_form_for @receipt do |f| %>
+          <%= f.input :photo, as: :file, input_html: { accept: "image/*", capture: "camera"} %>
+          <input class="form-control hidden" type="hidden" name="scan" id="receipt_amount", value="true">
+          <%= f.submit :submit, class: 'btn-main btn-sm ml-2 mt-2 mb-4'%>
+        <% end %>
+        <div class="card-line-header-x mb-4"></div>
 
-        <!-- TODO: (1)
-              - ajouter un formulaire d'upload d'image
-              - rediriger vers l'action read_receipt
-        -->
+        <!-- Image form manually -->
+        <h4><i class="highlighted highlighted-food mb-2">Write my receipt ✍🏼</i></h4>
 
-
-        <!-- TODO: (9) pre-remplir le formulaire avec les params récupérés -->
-
-
-          <%= simple_form_for @receipt do |f| %>
-            <div class="row">
-              <div class="col-6">
-                <%= f.input :store, placeholder: "Auchan" %>
-              </div>
-              <div class="col-6">
-                <%= f.input :amount, placeholder: "300"  %>
-              </div>
-              <div class="col-12">
-                <%= f.input :description, placeholder: "Food shopping for the week.."  %>
-                <%= f.input :date %>
-                <%= f.input :address, placeholder: "52 rue d'Angleterre 59000 Lille" %>
-
-                <!-- checkboxes -->
-
-                <div class="form-group">
-                  <label class="control-label check_boxes optional">Categories</label>
-                  <input type="hidden" name="receipt[category_name]" value="" id="category_value">
-                  <div class="category-choices">
-                    <% Receipt::CATEGORIES.each do |key, category| %>
-                      <input type="checkbox" class="checkbox" value="<%= category %>"  name="receipt[category_name]" id="<%= category %>">
-                      <label for="<%= key %>">
-                        <!-- <i class="fa fa-check"></i> -->
-                        <%= category %>
-                      </label>
-                    <% end %>
-                   </div>
-                </div>
-                <%= f.submit :submit, class: ' btn-main btn-sm ml-2 mt-2 mb-4' %>
-              </div>
+          <!-- TODO: (9) pre-remplir le formulaire avec les params récupérés -->
+        <%= simple_form_for @receipt do |f| %>
+          <div class="row">
+            <div class="col-6">
+              <%= f.input :store, placeholder: "Auchan" %>
             </div>
-          <% end %>
+            <div class="col-6">
+              <%= f.input :amount, placeholder: "300"  %>
+            </div>
+            <div class="col-12">
+              <%= f.input :description, placeholder: "Food shopping for the week.."  %>
+              <%= f.input :date %>
+              <%= f.input :address, placeholder: "52 rue d'Angleterre 59000 Lille" %>
+
+              <!-- checkboxes -->
+
+              <div class="form-group">
+                <label class="control-label check_boxes optional">Categories</label>
+                <input class="form-control hidden" type="hidden" name="scan" id="receipt_amount", value="false">
+                <input type="hidden" name="receipt[category_name]" value="" id="category_value">
+                <div class="category-choices">
+                  <% Receipt::CATEGORIES.each do |key, category| %>
+                    <input type="checkbox" class="checkbox" value="<%= category %>"  name="receipt[category_name]" id="<%= category %>">
+                    <label for="<%= key %>">
+                      <!-- <i class="fa fa-check"></i> -->
+                      <%= category %>
+                    </label>
+                  <% end %>
+                 </div>
+              </div>
+              <%= f.submit :submit, class: ' btn-main btn-sm ml-2 mt-2 mb-4' %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

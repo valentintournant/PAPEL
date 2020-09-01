@@ -1,5 +1,4 @@
 class TextParserService
-
   # TODO: implement the TextParserService for Alexesens
 
   def initialize(text)
@@ -7,27 +6,32 @@ class TextParserService
   end
 
   def call
-    # 1. find the store name
+
     return parse_decathlon_receipt if @text.downcase.include? 'decathlon'
-
-    return parse_alexesens_receipt if true # TODO: (5) replace it
-
+    return parse_so_good_receipt if @text.downcase.include? 'so good'
     # ticket is not yet know
     { amount: 'unknow ticket' }
   end
 
   def parse_decathlon_receipt
-    puts "it is a decathlon ticket !!!"
+    puts "it is a decathlon ticket"
 
     amount = @text.split('TOTAL')[1].split('€')[0].strip.to_f
 
-    return { amount: amount, category_name: 'sport' }
+    return {
+      amount: amount,
+      category_name: 'entertainment',
+      store: 'Decathlon',
+      description: nil,
+      date: nil,
+      address: nil
+    }
   end
 
-  def parse_alexesens_receipt
+  def parse_so_good_receipt
+    puts "it is a So Good ticket"
     # TODO: (6) split,strip on the @text
 
     # TODO: (7) return a Receipt.new()
   end
-
 end

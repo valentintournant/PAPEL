@@ -1,5 +1,5 @@
 class ReceiptsController < ApplicationController
-  before_action :set_receipt, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_receipt, only: [:show, :edit, :update, :destroy]
 
   def show
     @receipt = Receipt.find(params[:id])
@@ -13,19 +13,16 @@ class ReceiptsController < ApplicationController
     end
   end
 
-  def read_receipt
-    # TODO: (3) s'assurer qu'on arrive ici avec le formulaire
+  def read
     # TODO: (4) recuperer l'id de cloudinary grâce aux params
+    @receipt = Receipt.find(params[:id])
+    text = ImageReaderService.call(@receipt.photo.key)
 
-    receipt = Receipt.last
+    infos = TextParserService.new(text).call # { amount: 34, category_name: '' }
+    # TODO Bosser sur le text parser
 
-    text = ImageReaderService.call(receipt.photo.key)
-
-    receipt = TextParserService.new(text).call
-
-    # TODO: (8) tu rediriges vers la new avec les params permettant d'auto-remplir le formulaire
-
-    # raise
+    redirect_to edit_receipt_path(@receipt, {receipt: infos.compact})
+    # TODO: (8) tu rediriges vers l'edit avec les params permettant d'auto-remplir le formulaire
   end
 
   def new
@@ -34,17 +31,29 @@ class ReceiptsController < ApplicationController
 
   def create
     @receipt = Receipt.new(receipt_params)
-
     @receipt.user = current_user
-    if @receipt.save
-      redirect_to receipt_path(@receipt), notice: 'Receipt was successfully created.'
-    else
-      raise
-      render :new
+    if params['scan'] == 'true'
+      if @receipt.save(validate: false)
+        redirect_to read_receipt_path(@receipt), notice: 'Photo was successfully analyse.'
+      else
+        render :new
+      end
+      # Receipt manually added
+    elsif if @receipt.save
+            redirect_to receipt_path(@receipt), notice: 'Receipt was successfully created.'
+          else
+            render :new
+          end
     end
   end
 
   def edit
+    @receipt = Receipt.find(params[:id])
+    @receipt.date = Date.today
+    receipt_params.each do |key, value|
+      @receipt[key] = value
+    end
+
   end
 
   def update
@@ -70,6 +79,6 @@ class ReceiptsController < ApplicationController
   end
 
   def receipt_params
-    params.require(:receipt).permit(:title, :date, :store, :amount, :description, :category_name, :user_id, :address, :photo)
+    params.require(:receipt).permit(:title, :date, :store, :amount, :description, :category_name, :user_id, :address, :photo, :scan)
   end
 end
