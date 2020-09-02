@@ -16,7 +16,7 @@
         <%= simple_form_for @receipt do |f| %>
           <%= f.input :photo, as: :file, input_html: { accept: "image/*", capture: "camera"} %>
           <input class="form-control hidden" type="hidden" name="scan" id="receipt_amount", value="true">
-          <%= f.submit :submit, class: 'btn-main btn-sm ml-2 mt-2 mb-4'%>
+          <%= f.button_button t(".submit"), name: "Submit", class: 'btn-main' %>
         <% end %>
         <div class="card-line-header-x mb-4"></div>
 
