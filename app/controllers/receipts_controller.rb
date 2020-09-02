@@ -27,6 +27,7 @@ class ReceiptsController < ApplicationController
 
   def new
     @receipt = Receipt.new
+    @new = true
   end
 
   def create
@@ -44,12 +45,12 @@ class ReceiptsController < ApplicationController
   end
 
   def edit
+
     @receipt = Receipt.find(params[:id])
     @receipt.date = Date.today
     receipt_params.each do |key, value|
       @receipt[key] = value
     end
-
   end
 
   def update

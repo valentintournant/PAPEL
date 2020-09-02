@@ -6,7 +6,9 @@ class TextParserService
   end
 
   def call
+    raise
 
+    return parse_uniqlo_receipt if @text.downcase.include? 'uniqlo'
     return parse_decathlon_receipt if @text.downcase.include? 'decathlon'
     return parse_so_good_receipt if @text.downcase.include? 'so good'
     # ticket is not yet know
@@ -23,12 +25,33 @@ class TextParserService
       category_name: 'entertainment',
       store: 'Decathlon',
       description: nil,
-      date: nil,
-      address: nil
+      date: '2020 august 20',
+      address: '2 Rue des Tanneurs 59000 Lille',
+    }
+  end
+
+  def parse_uniqlo_receipt
+    puts "it is a Uniqlo ticket"
+
+    amout =
+
+    amount = @text.
+    date = ...
+    address = ...
+    raise
+
+    return {
+      amount: amount,
+      category_name: 'shopping',
+      store: 'Uniqlo',
+      description: nil,
+      date: date,
+      address: address,
     }
   end
 
   def parse_so_good_receipt
+
     puts "it is a So Good ticket"
     # TODO: (6) split,strip on the @text
 
