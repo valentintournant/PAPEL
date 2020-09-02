@@ -2,7 +2,6 @@
 # it will create a temporary image, read it with tessereact then delete the tmp file
 
 class ImageReaderService
-
   TMP_FILE_NAME = "/tmp/image.jpg"
 
   def self.call(image_id)
@@ -12,5 +11,4 @@ class ImageReaderService
     File.delete(TMP_FILE_NAME) if File.exist? TMP_FILE_NAME
     image_text
   end
-
 end
