@@ -7,7 +7,7 @@
         <h1>PapeL</h1>
         <h3>Make your receipts usefull again!</h3>
         <div class="btn-container-y">
-          <a class="btn-main-banner" href="#">Try now!</a>
+          <%= link_to "Try now", new_receipt_path, class: "btn-main ml-5" %>
         </div>
       </div>
     </div>
@@ -61,7 +61,9 @@
       <div class="feature-body">
         <h4 class="feature-h4"><strong>SCAN</strong> your ticket 🤟</h4>
         <p class="feature-text text-justify">Enter the type of expense you are logging in PapeL. <br> It could be shopping, food, fuel, shopping, or anything else! Just fill in the costs and let PapeL do the math for you.</p>
-        <a href="#" class="btn-main">Start now</a>
+        <% if current_user %>
+          <%= link_to "Start now", new_receipt_path, class: "btn-main" %>
+        <% end %>
       </div>
     </div>
   </div>
