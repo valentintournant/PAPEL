@@ -12,6 +12,22 @@ class ProfilesController < ApplicationController
     end
   end
 
+  def become_premium
+    session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      line_items: [{
+        name: "blablabla",
+        amount: 1500,
+        currency: 'eur',
+        quantity: 1
+      }],
+      success_url: new_receipt_url,
+      cancel_url: new_receipt_url
+    )
+
+    current_user.update(checkout_session_id: session.id)
+  end
+
   def stats
     @user_expense = current_user.total_receipts
     @user = current_user
