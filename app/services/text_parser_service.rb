@@ -6,8 +6,6 @@ class TextParserService
   end
 
   def call
-    raise
-
     return parse_uniqlo_receipt if @text.downcase.include? 'uniqlo'
     return parse_decathlon_receipt if @text.downcase.include? 'decathlon'
     return parse_so_good_receipt if @text.downcase.include? 'so good'
@@ -33,13 +31,6 @@ class TextParserService
   def parse_uniqlo_receipt
     puts "it is a Uniqlo ticket"
 
-    amout =
-
-    amount = @text.
-    date = ...
-    address = ...
-    raise
-
     return {
       amount: amount,
       category_name: 'shopping',
@@ -51,7 +42,6 @@ class TextParserService
   end
 
   def parse_so_good_receipt
-
     puts "it is a So Good ticket"
     # TODO: (6) split,strip on the @text
 
