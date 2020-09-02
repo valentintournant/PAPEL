@@ -24,21 +24,25 @@ class TextParserService
       store: 'Decathlon',
       description: nil,
       date: '2020 august 20',
-      address: '2 Rue des Tanneurs 59000 Lille',
+      address: '2 Rue des Tanneurs 59000 Lille'
     }
   end
 
   def parse_uniqlo_receipt
     puts "it is a Uniqlo ticket"
+    date = @text.match(/(?:(?:(?:0[1-9]|1\d|2[0-8])\/(?:0[1-9]|1[0-2])|(?:29|30)\/(?:0[13-9]|1[0-2])|31\/(?:0[13578]|1[02]))\/[1-9]\d{3}|29\/02(?:\/[1-9]\d(?:0[48]|[2468][048]|[13579][26])|(?:[2468][048]|[13579][26])00))/)[0]
+    store = @text.downcase.split('www.')[1].split('.')[0]
+    amount = @text.split('EUR')[1].split[0].to_f
+    address = @text.split('Uniqlo')[1].split[0] + " " + @text.split(',')[1].split('TVA')[0].strip
 
-    return {
-      amount: amount,
-      category_name: 'shopping',
-      store: 'Uniqlo',
-      description: nil,
-      date: date,
-      address: address,
-    }
+      return {
+        amount: amount,
+        category_name: 'shopping',
+        store: 'Uniqlo',
+        description: nil,
+        date: date,
+        address: address
+      }
   end
 
   def parse_so_good_receipt
