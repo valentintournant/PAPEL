@@ -42,3 +42,23 @@
 .btn-add {
   margin-top: 10px;
 }
+
+#btn-arrow {
+  color: #F26766;
+  padding: 8px 24px;
+  border-radius: 50px;
+  border: 2px solid #F26766;
+  background: white;
+    a {
+      color: #F26766;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+}
+
+#btn-arrow:hover {
+  border: 2px solid #D83E3E;
+  color: #D83E3E;
+  text-decoration: none;
+}

@@ -20,7 +20,12 @@
 
 
     <div class="col-12">
-      <%= f.input :address, placeholder: "52 rue d'Angleterre 59000 Lille" %>
+
+      <% if @new %>
+        <%= f.input :address, placeholder: "52 rue d'angleterre, 59000 Lille" %>
+      <% else %>
+        <%= f.input :address %>
+      <% end %>
     </div>
 
     <div class="col-12">
@@ -32,7 +37,7 @@
         <div class="category-choices">
           <% Receipt::CATEGORIES.each do |key, category| %>
             <input type="checkbox" class="checkbox" value="<%= category %>"  name="receipt[category_name]" id="<%= category %>">
-            <label for="<%= key %>">
+            <label for="<%= key %>" class="<%= 'active' if key == @receipt.category_name %>">
               <!-- <i class="fa fa-check"></i> -->
               <%= category %>
             </label>
@@ -41,7 +46,7 @@
       </div>
     </div>
     <div class="col-12">
-      <%= f.button_button t(".submit"), name: "Submit", class: ' btn-main ml-2 mt-2 mb-4' %>
+      <%= f.button_button t(".submit"), name: "Submit", class: 'btn-main ml-2' %>
     </div>
   </div>
 <% end %>

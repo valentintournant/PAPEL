@@ -57,19 +57,18 @@
       <div class="row">
         <div class="col-12">
           <div class="form-post">
-            <!-- TODO: (1)
-                  - ajouter un formulaire d'upload d'image
-                  - rediriger vers l'action read_receipt
-            -->
-            <!-- TODO: (9) pre-remplir le formulaire avec les params récupérés -->
+            <!-- HEADER -->
             <div class="text-center"><h1>New receipt</h1></div>
             <div class="card-line-header-x mb-4"></div>
             <h4><i class="highlighted highlighted-transport mb-2">Scan my receipt 🤩</i></h4>
               <!-- Scan Image form -->
             <%= simple_form_for @receipt do |f| %>
-              <%= f.input :photo, as: :file, input_html: { accept: "image/*", capture: "camera"} %>
+              <div>
+                <%= f.input :photo, as: :file, label: "Add your picture"%>
+                <%= f.input :photo, as: :file, label: "Take a picture", input_html: { accept: "image/*", capture: "camera"} %>
+              </div>
               <input class="form-control hidden" type="hidden" name="scan" id="receipt_amount", value="true">
-              <%= f.submit :submit, class: 'btn-main btn-sm ml-2 mt-2 mb-4'%>
+              <%= f.button_button t(".submit"), name: "Submit", class: 'btn-main' %>
             <% end %>
             <div class="card-line-header-x mb-4"></div>
 
@@ -78,7 +77,6 @@
 
               <!-- TODO: (9) pre-remplir le formulaire avec les params récupérés -->
             <%= render 'form', receipt: @receipt %>
-
           </div>
         </div>
       </div>

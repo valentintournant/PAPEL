@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="d-flex justify-content-center mt-2">
+  <div class="d-flex justify-content-center">
     <h1>Your
-      <i class="highlighted highlighted-vacation mt-2">receipt</i>
+      <i class="highlighted highlighted-vacation">receipt</i>
     </h1>
   </div>
 
@@ -29,7 +29,12 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+  <div class="d-flex justify-content-center mt-4">
+    <%= link_to profile_path(current_user), class: "btn-outline" do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+  </div>
 </div>
-<div class="container-y">
-  <div class="btn-outline mt-4" style="margin: 4px 4px 0px 0px;"> <%= link_to 'Back to receipts', profile_path(current_user) %></div>
-</div>
+
+
+

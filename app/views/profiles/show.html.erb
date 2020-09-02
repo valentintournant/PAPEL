@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="mt-4 d-flex justify-content-center"> My<i class="highlighted highlighted-transport">PapeL</i></h1>
+  <h1 class="d-flex justify-content-center">My<i class="highlighted highlighted-transport"> PapeL</i></h1>
 
 
   <div class="card-user-x mt-5">
@@ -41,7 +41,7 @@
   </div>
 
   <div class="mt-2 mb-5">
-    <% @receipts.each do |receipt| %>
+    <% @receipts.order(:date).reverse.each do |receipt| %>
 
       <% icon_name = "ic-#{receipt.category_name}.png" %>
       <%= link_to receipt_path(receipt) do %>
@@ -69,4 +69,12 @@
       <% end %>
     <% end %>
   </div>
+  <div class="mt-4 d-flex justify-content-center">
+      <%= link_to category_list_receipts_path, id: "btn-arrow" do %>
+        <i class="fas fa-arrow-left"></i>
+      <% end %>
+  </div>
 </div>
+
+
+
