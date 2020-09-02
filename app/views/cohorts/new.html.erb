@@ -1,8 +1,12 @@
-<div class="form-container-y container form-container-y">
+<div class="form-container-y container">
   <div class="row justify-content-center">
     <div class="col-12 col-lg-8">
-      <div class="card-form-y p-4">
-        <h2 class="title"> Create<i class="highlighted highlighted-transport"> a group </i></h2>
+      <div class="card-form-y">
+        <div class="d-flex justify-content-center">
+          <h1 class="title">Create
+            <i class="highlighted highlighted-transport">a group</i>
+          </h1>
+        </div>
           <%= render 'form', cohort: @cohort %>
         <div class="mt-4 d-flex justify-content-center">
           <%= link_to cohorts_path, class: "btn-outline" do %>
@@ -11,5 +15,6 @@
         </div>
       </div>
   </div>
+</div>
 </div>
 
