@@ -39,7 +39,7 @@ class TextParserService
     amount = @text.split('EUR')[1].split[0].to_f
 
     raise
-    address = @text.split('Uniqlo')[1].split[0] + " " + @text.split(',')[1].split('TVA')[0].strip
+    address = @text.split(/Uni[gq]lo/)[1].split[0] + " " + @text.split(',')[1].split('TVA')[0].strip
 
       return {
         amount: amount,
