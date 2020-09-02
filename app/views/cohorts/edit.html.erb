@@ -1,12 +1,15 @@
-<div class="container">
-  <div class="row justify-content-center">
+<div class="container full-height">
+  <div class="row justify-content-center full-height">
     <div class="col-12 col-lg-8">
-      <h1>Editing Group</h1>
-
+      <h1 class="d-flex justify-content-center">Editing
+      <i class="highlighted highlighted-transport"> Group</i>
+    </h1>
       <%= render 'form', cohort: @cohort %>
-      <div class="mt-3 ml-3">
-        <%= link_to 'Back', cohorts_path %>
-      </div>
-    </div>
+  </div>
+</div>
+<div class="mt-4 d-flex justify-content-center">
+      <%= link_to category_list_receipts_path, id: "btn-arrow" do %>
+        <i class="fas fa-arrow-left"></i>
+      <% end %>
   </div>
 </div>
