@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 
   # TODO:(2) add the route to read a receipt
 
@@ -22,6 +23,6 @@ Rails.application.routes.draw do
     collection do
       get :stats
     end
+    get 'become_premium', to: 'profiles#become_premium'
   end
 end
-

@@ -1,0 +1,85 @@
+<div class="container">
+  <div class="row py-4">
+    <div class="col">
+
+
+      <div class="px-4 px-lg-0">
+  <!-- For demo purpose -->
+        <div class="container text-white py-5 text-center">
+          <h1 class="display-4">Checkout summary</h1>
+          <p class="lead mb-0">Thank you for trusting us with your Papels! </p>
+        </div>
+        <!-- End -->
+
+        <div class="pb-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-6 p-3 bg-white rounded shadow-sm mb-2">
+
+                <!-- Shopping cart table -->
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col" class="border-0 bg-light">
+                          <div class="p-2 px-3 text-uppercase">Product</div>
+                        </th>
+                        <th scope="col" class="border-0 bg-light">
+                          <div class="py-2 text-uppercase">Price</div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row" class="border-0">
+                          <div class="p-2">
+                            <%= image_tag "logo.png" %>
+                            <div class="ml-3 d-inline-block align-middle">
+                              <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Premium Subscription</a></h5><span class="text-muted font-weight-normal font-italic d-block">For life!</span>
+                            </div>
+                          </div>
+                        </th>
+                        <td class="border-0 align-middle"><strong>15.00€</strong></td>                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- End -->
+              </div>
+            </div>
+
+            <div class="row p-3 bg-white rounded shadow-sm">
+              <div class="col-lg-6">
+                <div class="bg-light px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+                <div class="p-4">
+                  <ul class="list-unstyled mb-4">
+                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>15.00€</strong></li>
+                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong>$0.00</strong></li>
+                    <li class="d-flex justify-content-between py-3"><strong class="text-muted">Total</strong>
+                      <h5 class="font-weight-bold">15.00€</h5>
+                    </li>
+
+                      <button id="pay" href="#" class="btn-main d-flex m-auto">Pay</button>
+                      <!-- # Commented for the lecture, remove comments. -->
+                      <script src="https://js.stripe.com/v3/"></script>
+                      <script>
+                        const paymentButton = document.getElementById('pay');
+                        paymentButton.addEventListener('click', () => {
+                          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+                          stripe.redirectToCheckout({
+                            sessionId: '<%= current_user.checkout_session_id %>'
+                          });
+                        });
+                      </script>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -34,6 +34,10 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'money-rails'
+gem 'stripe'
+gem 'stripe_event'
+
 
 gem 'rtesseract'
 gem 'httparty'
