@@ -38,7 +38,6 @@ class TextParserService
     store = @text.downcase.split('www.')[1].split('.')[0]
     amount = @text.split('EUR')[1].split[0].to_f
 
-    raise
     address = @text.split(/Uni[gq]lo/)[1].split[0] + " " + @text.split(',')[1].split('TVA')[0].strip
 
       return {
