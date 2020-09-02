@@ -54,10 +54,9 @@ class TextParserService
 
     puts "it is a So Good ticket"
 
-    raise
     # TODO: (6) split,strip on the @text
     amount = @text.split('TOTAL TICKET')[1].split('/')[0].strip.to_f
-    address = @text.split('EURATECHN')[1].split('49000')[0].strip + " " + @text.split('49000')[1].split('FRANCE')[0].strip
+    address = @text.split('EURATECHN')[1].split(/[R4]9000/)[0].strip + " " + @text.split('49000')[1].split('FRANCE')[0].strip
     date = @text.downcase.split('vente')[1].split[0]
     # TODO: (7) return a Receipt.new()
     return {
