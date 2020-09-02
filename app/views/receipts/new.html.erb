@@ -9,7 +9,10 @@
         <h4><i class="highlighted highlighted-transport mb-2">Scan my receipt 🤩</i></h4>
           <!-- Scan Image form -->
         <%= simple_form_for @receipt do |f| %>
-          <%= f.input :photo, as: :file, input_html: { accept: "image/*", capture: "camera"} %>
+          <div>
+            <%= f.input :photo, as: :file, label: "Add your picture"%>
+            <%= f.input :photo, as: :file, label: "Take a picture", input_html: { accept: "image/*", capture: "camera"} %>
+          </div>
           <input class="form-control hidden" type="hidden" name="scan" id="receipt_amount", value="true">
           <%= f.button_button t(".submit"), name: "Submit", class: 'btn-main' %>
         <% end %>
@@ -20,7 +23,6 @@
 
           <!-- TODO: (9) pre-remplir le formulaire avec les params récupérés -->
         <%= render 'form', receipt: @receipt %>
-
       </div>
     </div>
   </div>
