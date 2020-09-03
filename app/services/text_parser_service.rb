@@ -52,7 +52,7 @@ class TextParserService
 
     # TODO: (6) split,strip on the @text
     amount = @text.split('TOTAL TICKET')[1].split('/')[0].strip.to_f
-    address = "EURATECHNOLOGIE 59000 LILLE"
+    address = "163 Avenue de Bretagne, 59000 Lille"
 
     # address = @text.split('EURATECHN')[1].split(/[R4]9000/)[0].strip + " " + @text.split('[R4]9000')[1].split('FRANCE')[0].strip
     date = @text.downcase.split('vente')[1].split[0]
