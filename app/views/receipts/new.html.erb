@@ -1,5 +1,5 @@
 <!-- Scan or add  a ticket -->
-<div class="container mt-4 mb-4">
+<div class="container">
 
   <div class="premium">
     <% if current_user.premium == false && current_user.receipts.size > 10 %>
@@ -12,8 +12,9 @@
             <div class="col-md-6 mb-4">
 
               <!-- Card -->
-              <h1 class="mt-4 d-flex justify-content-center mb-3"> Your<i class="highlighted highlighted-shopping">Account</i></h1>
-              <div class="card gradient-card card-premium">
+
+              <h1 class="d-flex justify-content-center mb-4"> Your<i class="highlighted highlighted-shopping">Account</i></h1>
+              <div class="card gradient-card">
 
                   <div class="card-image" style="background-color: white;">
                     <!-- Content -->
