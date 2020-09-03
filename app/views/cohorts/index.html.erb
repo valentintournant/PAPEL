@@ -19,7 +19,7 @@
 <% @cohorts.each do |cohort| %>
   <%= link_to cohort_path(cohort) do %>
     <div class="card-group mb-3">
-      <%= cl_image_tag cohort.owner.avatar.key, height:60, width: 50, crop: :fill, class:"card-group-avatar"%>
+      <%= cl_image_tag cohort.owner.avatar.key, height:100, width: 100, crop: :fill, class:"card-group-avatar"%>
       <div class="card-group-text d-flex">
         <p class="card-group-title"><strong><%=  cohort.title %></strong></p>
           <div class="card-group-icon-edit ml-2">

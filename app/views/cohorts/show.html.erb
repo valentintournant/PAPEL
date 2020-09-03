@@ -4,9 +4,9 @@
 
     <div class="avatar d-flex mb-2">
       <% @cohort.members.first(4).each do |member| %>
-      <div class="mr-3">
-        <div class="pic d-flex justify-content-center">
-          <%= cl_image_tag member.user.avatar.key, height: 60, width: 60, crop: :fill, class: 'avatar-large' %>
+
+      <div class="avatar mr-4">
+        <%= cl_image_tag member.user.avatar.key, height: 100, width: 100, crop: :fill, class: 'avatar-large' %>
         </div>
         <div class="tag">
           <% if member.status == "owner" %>
@@ -15,6 +15,7 @@
             <p class="invited-tag mt-1" ><%= member.status.capitalize %></p>
           <% end %>
         </div>
+
       </div>
       <% end %>
     </div>
