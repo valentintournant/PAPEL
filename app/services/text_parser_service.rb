@@ -49,15 +49,10 @@ class TextParserService
 
   def parse_so_good_receipt
 
-    p "=========== text========="
-    p @text
-
-    puts "it is a So Good ticket"
-
-
     # TODO: (6) split,strip on the @text
     amount = @text.split('TOTAL TICKET')[1].split('/')[0].strip.to_f
     address = "EURATECHNOLOGIE 59000 LILLE"
+
     # address = @text.split('EURATECHN')[1].split(/[R4]9000/)[0].strip + " " + @text.split('[R4]9000')[1].split('FRANCE')[0].strip
     date = @text.downcase.split('vente')[1].split[0]
     # TODO: (7) return a Receipt.new()
