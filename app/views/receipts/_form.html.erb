@@ -33,7 +33,8 @@
 
       <div class="form-group">
         <label class="control-label check_boxes optional">Categories</label>
-        <input type="hidden" name="receipt[category_name]" value="" id="category_value">
+
+        <input type="hidden" name="receipt[category_name]" value="<%= params[:receipt][:category_name] if params[:receipt] %>" id="category_value">
         <div class="category-choices">
           <% Receipt::CATEGORIES.each do |key, category| %>
             <input type="checkbox" class="checkbox" value="<%= category %>"  name="receipt[category_name]" id="<%= category %>">
