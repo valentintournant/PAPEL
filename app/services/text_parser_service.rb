@@ -6,7 +6,6 @@ class TextParserService
   end
 
   def call
-
     return parse_uniqlo_receipt if @text.downcase.include? 'uniqlo'
     return parse_decathlon_receipt if @text.downcase.include? 'decathlon'
     return parse_so_good_receipt if @text.downcase.include? 'sogood'
@@ -30,8 +29,6 @@ class TextParserService
   end
 
   def parse_uniqlo_receipt
-
-
     date = @text.match(/(?:(?:(?:0[1-9]|1\d|2[0-8])\/(?:0[1-9]|1[0-2])|(?:29|30)\/(?:0[13-9]|1[0-2])|31\/(?:0[13578]|1[02]))\/[1-9]\d{3}|29\/02(?:\/[1-9]\d(?:0[48]|[2468][048]|[13579][26])|(?:[2468][048]|[13579][26])00))/)[0]
     store = @text.downcase.split('www.')[1].split('.')[0]
     amount = @text.split('EUR')[1].split[0].to_f
@@ -48,6 +45,10 @@ class TextParserService
   end
 
   def parse_so_good_receipt
+    puts "============= test ==========="
+    p @text
+
+    # raise
 
     # TODO: (6) split,strip on the @text
     amount = @text.split('TOTAL TICKET')[1].split('/')[0].strip.to_f
