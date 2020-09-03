@@ -7,8 +7,8 @@
   </div>
     <div class="avatar d-flex">
       <% @cohort.members.first(4).each do |member| %>
-      <div class="mr-4">
-        <%= cl_image_tag member.user.avatar.key, height: 60, width: 60, crop: :fill, class: 'avatar-large' %>
+      <div class="avatar mr-4">
+        <%= cl_image_tag member.user.avatar.key, height: 100, width: 100, crop: :fill, class: 'avatar-large' %>
       </div>
       <% end %>
     </div>
