@@ -21,28 +21,29 @@
     <div class="card-group mb-3">
       <%= cl_image_tag cohort.owner.avatar.key, height:60, width: 50, crop: :fill, class:"card-group-avatar"%>
       <div class="card-group-text d-flex">
-          <p class="card-group-title"><strong><%=  cohort.title %></strong></p>
-            <div class="card-group-icon-edit ml-2">
-              <%= link_to edit_cohort_path(cohort), method: :get do %>
+        <p class="card-group-title"><strong><%=  cohort.title %></strong></p>
+          <div class="card-group-icon-edit ml-2">
+            <%= link_to edit_cohort_path(cohort), method: :get do %>
               <i class="fas fa-pen" style="font-size: 14px;"></i>
-              <% end %>
+            <% end %>
             </div>
             <div class="card-group-icon-delete">
               <%= link_to cohort_path(cohort), method: :delete, data: { confirm: "Are you sure?" } do %>
               <i class="fas fa-times" style="font-size: 14px;"></i>
               <% end %>
             </div>
-          <p class="card-group-name"><%= cohort.owner.name.capitalize %></p>
+              <p class="card-group-name"><%= cohort.owner.name.capitalize %></p>
       </div>
+      <div class="tag-place">
+        <% if cohort.owner == current_user %>
+          <p class="owner-tag mt-1" >Owner</p>
+        <% else %>
+          <p class="invited-tag mt-1" >Invited</p>
+        <% end %>
     </div>
+      </div>
     <% end %>
   <% end %>
-   <div class="mt-4 d-flex justify-content-center">
-    <%= link_to profile_path(current_user), class: "btn-outline" do %>
-      <i class="fas fa-arrow-left"></i>
-    <% end %>
-  </div>
-
 </div>
 
 

@@ -12,7 +12,15 @@ h3 {
 .owner-tag {
   background-color: rgba(242, 103, 103, 0.2);
   border-radius: 5px;
-  color: rgb(242, 103, 102)
+  color: rgb(242, 103, 102);
+  padding: 2px;
+}
+
+.invited-tag {
+  background-color: rgba(73, 160, 235, 0.2);
+  border-radius: 5px;
+  color: rgb(73, 160, 235);
+  padding: 2px;
 }
 
 img {

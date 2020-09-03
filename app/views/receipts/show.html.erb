@@ -29,11 +29,6 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <div class="d-flex justify-content-center mt-4">
-    <%= link_to profile_path(current_user), class: "btn-outline" do %>
-      <i class="fas fa-arrow-left"></i>
-    <% end %>
-  </div>
 </div>
 
 

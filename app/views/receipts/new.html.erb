@@ -1,18 +1,36 @@
 <!-- Scan or add  a ticket -->
-<div class="container mt-4 mb-4">
+<div class="container">
 
-  <div class="premium">
+ <div class="loader d-none" id="loader">
+           <span id='scanning'>
+              <span>S</span>
+              <span>c</span>
+              <span>a</span>
+              <span>n</span>
+              <span>n</span>
+              <span>i</span>
+              <span>n</span>
+              <span>g</span>
+                     <span>.</span>
+              <span>.</span>
+              <span>.</span>
+              </span>
+
+  </div>
+
+  <div class="premium" id="premium">
     <% if current_user.premium == false && current_user.receipts.size > 10 %>
 
               <!-- Card -->
           <!--Grid row-->
-          <div class="row">
+          <div class="row d-flex justify-content-center">
 
             <!--Grid column-->
             <div class="col-md-6 mb-4">
 
               <!-- Card -->
-              <h1 class="mt-4 d-flex justify-content-center mb-3"> Your<i class="highlighted highlighted-shopping">Account</i></h1>
+
+              <h1 class="d-flex justify-content-center mb-4"> Your<i class="highlighted highlighted-shopping">Account</i></h1>
               <div class="card gradient-card">
 
                   <div class="card-image" style="background-color: white;">
@@ -39,8 +57,10 @@
                     </div>
                     <p class="text-muted mt-1">You've almost used 100% of your free subsciption</p>
                     <h4 class="text-uppercase font-weight-bold my-4">Details</h4>
-                    <p class="text-muted" align="justify">We're sorry but it seems like you've used all your free Papels! We want to thank you for using our app, but it is now time for you to be part of our family!! For only 15€ you'll be able to stay with us <strong>forever</strong>❤️</p>
+                    <p class="text-muted mb-5" align="justify">We're sorry but it seems like you've used all your free Papels! We want to thank you for using our app, but it is now time for you to be part of our family!! For only 15€ you'll be able to stay with us <strong>forever</strong>❤️</p>
+                    <div class="d-flex justify-content-center">
                     <%= link_to 'Purchase', profile_become_premium_path(current_user), class: 'btn-main' %>
+                    </div>
                   </div>
 
               </div>
@@ -63,13 +83,18 @@
             <h4><i class="highlighted highlighted-transport mb-2">Scan my receipt 🤩</i></h4>
               <!-- Scan Image form -->
             <%= simple_form_for @receipt do |f| %>
-              <div>
-                <%= f.input :photo, as: :file, label: "Add your picture"%>
-                <%= f.input :photo, as: :file, label: "Take a picture", input_html: { accept: "image/*", capture: "camera"} %>
+              <div class="d-flex justify-content-center">
+            <%= f.input :photo,
+                        as: :file,
+                        label_html: { class: 'upload-photo'},
+                        label: 'Take 📸 or Add a 📁',
+                        input_html: { accept: "image/*", capture: "camera", class: 'd-none' }
+            %>
               </div>
               <input class="form-control hidden" type="hidden" name="scan" id="receipt_amount", value="true">
-              <%= f.button_button t(".submit"), name: "Submit", class: 'btn-main' %>
+              <%= f.button_button t(".submit"), name: "Submit", id: "submit", class: 'btn-main' %>
             <% end %>
+
             <div class="card-line-header-x mb-4"></div>
 
             <!-- Image form manually -->
@@ -77,7 +102,8 @@
 
               <!-- TODO: (9) pre-remplir le formulaire avec les params récupérés -->
             <%= render 'form', receipt: @receipt %>
-          </div>
+
+      </div>
         </div>
       </div>
     <% end %>

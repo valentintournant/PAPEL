@@ -16,7 +16,8 @@ class ProfilesController < ApplicationController
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
-        name: "blablabla",
+        name: "Premium lifetime subscription for PapeL 🤩
+        Thank you for your purchase!",
         amount: 1500,
         currency: 'eur',
         quantity: 1
