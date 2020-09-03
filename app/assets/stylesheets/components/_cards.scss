@@ -59,20 +59,20 @@
   width: 100%;
   margin-bottom: 15px;
   margin-top: 20px;
-  height: 100px;
+  height: 130px;
   padding: 10px;
   border-radius: 15px;
   box-shadow: 0 4px 20px 0 rgba(0,0,0,0.12);
   position: relative;
     #amount {
       position: absolute;
-      top: 55px;
+      top: 70px;
       right: 20px;
       font-size: 1.75rem;
     }
       .card-ticket-icons {
       position: absolute;
-      top: 10px;
+      top: 31px;
       right: 20px;
         i {
           color: #F26766;
@@ -103,8 +103,8 @@
 
     .card-ticket-text {
       position: absolute;
-      top: 10px;
-      left: 20px;
+      top: 25px;
+      left: 25px;
       #ticket-title {
         color: #F26766;
       }
@@ -114,7 +114,7 @@
       color: #99A7B0;
       font-size: 8px;
       position: absolute;
-      top: 32px;
+      top: 35px;
     }
 
     #card-ticket-desc {
