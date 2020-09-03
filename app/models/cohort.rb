@@ -9,4 +9,9 @@ class Cohort < ApplicationRecord
     member = self.members.find {|member| member.status == "owner"}
     return member.user
   end
+
+  def participant
+    member = self.members.find {|member| member.status == "participant"}
+    return member.user
+  end
 end
