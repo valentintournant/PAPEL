@@ -32,6 +32,7 @@ import { initDashboard } from '../plugins/dashboard';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete'
 import { selectCategory } from '../plugins/select_category'
+import { initLoader} from '../plugins/init_loader'
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -41,6 +42,7 @@ import { selectCategory } from '../plugins/select_category'
 document.addEventListener('turbolinks:load', () => {
   initDashboard()
   initMapbox();
+  initLoader();
   initFlatpickr();
   selectCategory();
   if (document.getElementById('receipt_address')) initAutocomplete();
