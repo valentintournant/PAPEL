@@ -33,7 +33,7 @@ class ProfilesController < ApplicationController
     @current_month_number = params[:month].present? ? params[:month] : Time.now.month
 
     @total_expense = current_user.total_receipts
-    @user_expense = current_user.total_amount_for_current_month
+    @user_expense = current_user.total_amount_for_specific_month(@current_month_number)
     @user = current_user
 
     @global_stat = !params[:month].present?
@@ -53,6 +53,8 @@ class ProfilesController < ApplicationController
 
     Receipt::CATEGORIES.each do |category_name, category_label|
       @labels << category_label
+
+      next if @user_expense == 0
 
       if !params[:month].present?
         @percentages << (current_user.total_receipts_per_category(category_name).fdiv(@user_expense) * 100).to_i

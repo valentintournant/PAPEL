@@ -66,7 +66,11 @@ class User < ApplicationRecord
   end
 
   def total_amount_for_current_month
-    self.current_monthly_receipts.sum { |receipt| receipt.amount }
+
+    receipts = self.current_monthly_receipts
+    return 0 if receipts.nil?
+
+    return receipts.sum { |receipt| receipt.amount }
   end
 
 end
