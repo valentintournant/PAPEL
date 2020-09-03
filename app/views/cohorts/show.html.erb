@@ -5,9 +5,9 @@
     <div class="avatar d-flex mb-2">
       <% @cohort.members.first(4).each do |member| %>
 
-      <div class="avatar mr-4">
+      <div class=" mr-4">
         <%= cl_image_tag member.user.avatar.key, height: 100, width: 100, crop: :fill, class: 'avatar-large' %>
-        </div>
+
         <div class="tag">
           <% if member.status == "owner" %>
             <p class="owner-tag mt-1" ><%= member.status.capitalize %></p>
