@@ -45,11 +45,14 @@ class ReceiptsController < ApplicationController
   end
 
   def edit
-
     @receipt = Receipt.find(params[:id])
     @receipt.date = Date.today
-    receipt_params.each do |key, value|
-      @receipt[key] = value
+
+    if params[:receipt]
+
+      receipt_params.each do |key, value|
+        @receipt[key] = value
+      end
     end
   end
 

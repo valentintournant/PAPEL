@@ -83,9 +83,13 @@
             <h4><i class="highlighted highlighted-transport mb-2">Scan my receipt 🤩</i></h4>
               <!-- Scan Image form -->
             <%= simple_form_for @receipt do |f| %>
-              <div>
-                <%= f.input :photo, as: :file, label: "Add your picture"%>
-                <%= f.input :photo, as: :file, label: "Take a picture", input_html: { accept: "image/*", capture: "camera"} %>
+              <div class="d-flex justify-content-center">
+            <%= f.input :photo,
+                        as: :file,
+                        label_html: { class: 'upload-photo'},
+                        label: 'Take 📸 or Add a 📁',
+                        input_html: { accept: "image/*", capture: "camera", class: 'd-none' }
+            %>
               </div>
               <input class="form-control hidden" type="hidden" name="scan" id="receipt_amount", value="true">
               <%= f.button_button t(".submit"), name: "Submit", id: "submit", class: 'btn-main' %>
