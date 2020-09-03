@@ -72,128 +72,128 @@ puts "#{Cohort.count}"
 # receipts
 
 receipt_1 = Receipt.create!(
-  date: "2020 july 23",
+  date: "2020 may 23",
   store: "La Famille",
-  amount: 13,
+  amount: 75,
   description: "Lunch at Le Wagon",
   category_name: "restaurant",
-  user_id: user_1.id,
+  user_id: user_4.id,
   address: "166 Bis Avenue de Bretagne, 59000 Lille",
 )
 
 receipt_2 = Receipt.create!(
-  date: "2020 august 2",
+  date: "2020 april 2",
   store: "Papa Rafaele",
-  amount: 16,
+  amount: 10,
   description: "Lunch at Le Wagon",
   category_name: "restaurant",
-  user_id: user_1.id,
+  user_id: user_4.id,
   address: "5 Rue Saint-Jacques, 59800 Lille",
 )
 
 receipt_3 = Receipt.create!(
-  date: "2020 june 30",
+  date: "2020 march 30",
   store: "Auchan",
-  amount: 120,
+  amount: 80,
   description: "Food shopping for this two weeks",
   category_name: "food_and_beverage",
-  user_id: user_1.id,
+  user_id: user_4.id,
   address: "14 Place Nouvelle Aventure, 59000 Lille",
 )
 
 receipt_4 = Receipt.create!(
-  date: "2020 july 29",
+  date: "2020 february 29",
   store: "Decathlon",
-  amount: 212,
+  amount: 20,
   description: "New bike",
   category_name: "shopping",
-  user_id: user_1.id,
+  user_id: user_4.id,
   address: "2 Rue des Tanneurs, 59000 Lille",
 )
 
 receipt_5 = Receipt.create!(
-  date: "2020 june 23",
+  date: "2020 january 23",
   store: "Bowling Fun",
-  amount: 35,
+  amount: 10,
   description: "Afterwork",
   category_name: "entertainment",
-  user_id: user_1.id,
+  user_id: user_4.id,
   address: "Z.A du Grand But, 8 Rue du Château d'Isenghien, 59160",
 )
 
 receipt_6 = Receipt.create!(
-  date: "2020 august 20",
+  date: "2020 september 20",
   store: "Trainline",
-  amount: 165,
+  amount: 60,
   description: "Weekend in Milan",
   category_name: "transport",
-  user_id: user_1.id,
+  user_id: user_4.id,
   address: "Rue de la Gare Lomme, 59160 Lomme",
 )
 
 receipt_7 = Receipt.create!(
-  date: "2020 june 28",
-  store: "Maje",
-  amount: 420,
+  date: "2020 september 28",
+  store: "Sandro",
+  amount: 100,
   description: "shopping for the year",
   category_name: "shopping",
-  user_id: user_1.id,
+  user_id: user_4.id,
   address: "31 Rue du Faubourg de Béthune, 59000 Lille",
 )
 
 receipt_8 = Receipt.create!(
-  date: "2020 july 31",
+  date: "2020 september 31",
   store: "Brilliant Costumes",
-  amount: 45,
+  amount: 20,
   description: "Costume for jules birthday",
   category_name: "others",
-  user_id: user_1.id,
+  user_id: user_4.id,
   address: "139 Rue Léon Gambetta, 59000 Lille",
 )
 
 receipt_9 = Receipt.create!(
-  date: "2020 july 12",
+  date: "2020 may 12",
   store: "Carrefour",
-  amount: 30,
+  amount: 12,
   description: "Gin for tonight",
   category_name: "food_and_beverage",
-  user_id: user_1.id,
+  user_id: user_4.id,
   address: "59 Avenue de la République, 59160 Lille",
 )
 
 receipt_10 = Receipt.create!(
-  date: "2020 august 15",
+  date: "2020 april 15",
   store: "Ryanair",
-  amount: 90,
+  amount: 56,
   description: "Weekend in Greece",
   category_name: "transport",
-  user_id: user_1.id,
+  user_id: user_4.id,
   address: "1 rue Royale, 59000 Lille",
 )
 
 receipt_11 = Receipt.create!(
-  date: "2020 june 3",
+  date: "2020 march 3",
   store: "UGC",
-  amount: 8,
+  amount: 31,
   description: "Tenet",
   category_name: "entertainment",
-  user_id: user_1.id,
+  user_id: user_4.id,
   address: "40 Rue de Béthune, 59800 Lille",
 )
 
 receipt_12 = Receipt.create!(
-  date: "2020 july 6",
+  date: "2020 february 6",
   store: "Purifiq",
-  amount: 5,
+  amount: 50,
   description: "Toothpaste tabs",
   category_name: "shopping",
-  user_id: user_1.id,
+  user_id: user_4.id,
   address: "52 rue d'Angleterre, 59000 Lille",
 )
 receipt_13 = Receipt.create!(
-  date: "2020 july 23",
+  date: "2020 january 23",
   store: "La Famille",
-  amount: 13,
+  amount: 23,
   description: "Lunch at Le Wagon",
   category_name: "restaurant",
   user_id: user_4.id,
