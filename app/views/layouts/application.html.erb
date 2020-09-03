@@ -44,7 +44,7 @@
             <div class="btn-plus-icon"><i class="fas fa-plus"></i></div>
           <% end %>
         </div>
-        <%= link_to stats_profiles_path do %>
+        <%= link_to stats_profiles_path(month: Time.now.month) do %>
           <i class="fas fa-chart-pie"></i>
         <% end %>
         <% if current_user %>

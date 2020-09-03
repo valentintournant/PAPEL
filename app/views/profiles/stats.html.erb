@@ -1,9 +1,16 @@
-
 <div class="container">
   <h1 class="d-flex justify-content-center"> My<i class="highlighted highlighted-transport">Expenses</i></h1>
   <div class="d-flex flex-column align-items-center mt-4">
-    <h4> You spent 🤑</h4>
-    <span><h4><i class="highlighted highlighted-food mb-4"> <strong><%=@user_expense %>€</strong> </i></span></h4>
+
+    <% if @global_stat %>
+      <h4> In total, you spent </h4>
+      <span><h4><i class="highlighted highlighted-food mb-4"> <strong><%= @total_expense %>€</strong> </i></span></h4>
+    <% end %>
+
+    <% if !@global_stat %>
+      <h4> This month you spent </h4>
+      <span><h4><i class="highlighted highlighted-food mb-4"> <strong><%= current_user.total_amount_for_specific_month(@current_month_number) %>€</strong> </i></span></h4>
+    <% end %>
   </div>
 </div>
 
@@ -13,28 +20,96 @@
         data-percentages="<%= @percentages.to_json %>">
 </canvas>
 
+<!-- arrows -->
+
+<% if !@global_stat %>
+  <div class="mt-4 d-flex justify-content-center">
+    <%= link_to "All stats", stats_profiles_path, class: "btn-outline"%>
+  </div>
+  <div class="text-for-month-or-global d-flex justify-content-center mt-4">
+
+
+    <div class="select-month">
+      <div class="topnav">
+        <%= link_to stats_profiles_path(month: @current_month_number.to_i - 1) do %>
+          <div class="fas fa-angle-left"></div>
+        <% end %>
+
+        <div class="topnav-right">
+          <%= link_to stats_profiles_path(month: @current_month_number.to_i + 1) do %>
+            <div class="fas fa-angle-right"></div>
+          <% end %>
+
+        </div>
+      </div>
+
+    </div>
+  <% end %>
+
+  <% if @global_stat %>
+    <div class="global-text">
+      <div class="mt-4 d-flex justify-content-center">
+        <%= link_to "Today's stats", stats_profiles_path(month: Time.now.month), class: "btn-outline"%>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
 <!-- List receipts -->
 <div class="container">
   <div class="stats-card">
-    <% Receipt::CATEGORIES.each do |key, value| %>
-      <% unless @user.total_receipts_per_category(key) == 0 %>
-        <% icon_name = "ic-#{key}.png" %>
-        <%= link_to profile_path(current_user, category_name: key) do %>
-          <div class="card-list-ticket mt-3">
-            <div class="category-icon"> <%= image_tag icon_name %></div>
-            <div class="card-list-content">
-              <div>
-                <% (@user.total_receipts_per_category(key).fdiv(@user_expense) * 100).to_i %>
-                <h5><small><%= value.split(" ").first %></small></h5>
-                <p><strong><%= @user.total_receipts_per_category(key) %> €</strong></p>
+
+    <!-- iteration sur les mois -->
+
+    <% @receipt_month_numbers.each do |month_number| %>
+
+      <% if @global_stat || params[:month].present? && params[:month].to_i == month_number %>
+
+        <div class="month-name"> <h4> <%= Date::MONTHNAMES[month_number] %></h4></div>
+
+        <% Receipt::CATEGORIES.each do |category_name, value| %>
+
+          <% unless current_user.total_monthly_receipts_per_category(category_name, month_number) == 0 %>
+            <% icon_name = "ic-#{category_name}.png" %>
+            <%= link_to profile_path(current_user, category_name: category_name) do %>
+              <div class="card-list-ticket mt-3">
+                <div class="category-icon">
+                  <%= image_tag icon_name %>
+                </div>
+                <div class="card-list-content">
+
+                  <div>
+                    <%# current_user.total_monthly_receipts_per_category(category_name, month_number).fdiv(current_user_expense) * 100).to_i %>
+                    <h5>
+                      <small>
+                        <%= value.split(" ").first %>
+                      </small>
+                    </h5>
+                    <p>
+                      <strong>
+                        <%= current_user.total_monthly_receipts_per_category(category_name, month_number) %> €
+                      </strong>
+                    </p>
+                  </div>
+
+                  <div>
+                    <h5>
+                      <strong>
+                        <%=(current_user.total_monthly_receipts_per_category(category_name, month_number).fdiv(current_user.total_amount_for_specific_month(month_number)) * 100).to_i %> %
+                      </strong>
+                    </h5>
+                  </div>
+
+                </div>
               </div>
-              <div>
-                <h5><strong><%=(@user.total_receipts_per_category(key).fdiv(@user_expense) * 100).to_i %> %</strong></h5>
-            </div>
-            </div>
-          </div>
+            <% end %>
+          <% end %>
+
         <% end %>
+
       <% end %>
+
     <% end %>
   </div>
 </div>
