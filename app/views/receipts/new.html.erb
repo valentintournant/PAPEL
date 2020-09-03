@@ -1,7 +1,24 @@
 <!-- Scan or add  a ticket -->
 <div class="container">
 
-  <div class="premium">
+ <div class="loader d-none" id="loader">
+           <span id='scanning'>
+              <span>S</span>
+              <span>c</span>
+              <span>a</span>
+              <span>n</span>
+              <span>n</span>
+              <span>i</span>
+              <span>n</span>
+              <span>g</span>
+                     <span>.</span>
+              <span>.</span>
+              <span>.</span>
+              </span>
+
+  </div>
+
+  <div class="premium" id="premium">
     <% if current_user.premium == false && current_user.receipts.size > 10 %>
 
               <!-- Card -->
@@ -71,8 +88,9 @@
                 <%= f.input :photo, as: :file, label: "Take a picture", input_html: { accept: "image/*", capture: "camera"} %>
               </div>
               <input class="form-control hidden" type="hidden" name="scan" id="receipt_amount", value="true">
-              <%= f.button_button t(".submit"), name: "Submit", class: 'btn-main' %>
+              <%= f.button_button t(".submit"), name: "Submit", id: "submit", class: 'btn-main' %>
             <% end %>
+
             <div class="card-line-header-x mb-4"></div>
 
             <!-- Image form manually -->
@@ -80,7 +98,8 @@
 
               <!-- TODO: (9) pre-remplir le formulaire avec les params récupérés -->
             <%= render 'form', receipt: @receipt %>
-          </div>
+
+      </div>
         </div>
       </div>
     <% end %>
