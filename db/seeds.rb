@@ -142,7 +142,7 @@ receipt_7 = Receipt.create!(
 )
 
 receipt_8 = Receipt.create!(
-  date: "2020 september 31",
+  date: "2020 september 25",
   store: "Brilliant Costumes",
   amount: 20,
   description: "Costume for jules birthday",
