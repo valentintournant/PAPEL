@@ -1,11 +1,19 @@
 const initLoader = () => {
-  const submit = document.getElementById('submit')
-  submit.addEventListener('click',() => {
-    const premium = document.getElementById('premium')
-    premium.classList.add("d-none");
-    const loader = document.getElementById('loader')
-    loader.classList.remove("d-none")
-  })
+  const submit = document.getElementById('submit');
+
+  if (submit) {
+    submit.addEventListener('click',() => {
+      const premium = document.getElementById('premium');
+      if (premium) {
+        premium.classList.add("d-none");
+      }
+
+      const loader = document.getElementById('loader')
+      if (loader) {
+        loader.classList.remove("d-none")
+      }
+    })
+  }
 };
 
 export { initLoader };
