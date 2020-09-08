@@ -18,7 +18,7 @@ rails db:drop db:create db:migrate db:seed
 
 ## Heroku
 
-- [Lien Heroku](https://papel-app.herokuapp.com/login/password)
+- [Lien Heroku](https://papel-app.herokuapp.com)
 
 ## Links
 
